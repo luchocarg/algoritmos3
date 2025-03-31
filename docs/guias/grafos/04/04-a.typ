@@ -8,7 +8,7 @@ Demostrar, usando inducción en la cantidad de vértices, que todo grafo de $n$ 
 tiene más de $((n−1)(n−2))/2$ aristas es conexo. Opcionalmente, puede demostrar la misma
 propiedad usando otras técnicas de demostración.
 
-== Solución por inducción en la cantidad de nodos 
+= Solución
 
 Sea $G=(V,E)$ quiero ver que $|V|=n and|E| = m > ((n−1)(n−2))/2  => G$ conexo.
 
