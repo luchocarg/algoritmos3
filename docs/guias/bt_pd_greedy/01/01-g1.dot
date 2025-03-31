@@ -1,0 +1,35 @@
+ digraph ej01bt {
+    node [shape=box, fontname="Arial"];
+    edge [fontname="Arial"];
+
+    root [label="()", shape=ellipse];
+    p0 [label="(0)"];
+    p1 [label="(1)"];
+    p00 [label="(0,0)"];
+    p01 [label="(0,1)"];
+    p10 [label="(1,0)"];
+    p11 [label="(1,1)", color="red", fontcolor="red"];
+    p000 [label="(0,0,0)", style="dashed"];
+    p001 [label="(0,0,1)", style="dashed"];
+    p010 [label="(0,1,0)"];
+    p011 [label="(0,1,1)", style="dashed"];
+    p100 [label="(1,0,0)", style="dashed"];
+    p101 [label="(1,0,1)"];
+    p110 [label="(1,1,0)", color="red", fontcolor="red"];
+    p111 [label="(1,1,1)", color="red", fontcolor="red"];
+
+    root -> p0;
+    root -> p1;
+    p0 -> p00;
+    p0 -> p01;
+    p1 -> p10;
+    p1 -> p11 [color="red"];
+    p00 -> p000;
+    p00 -> p001;
+    p01 -> p010;
+    p01 -> p011;
+    p10 -> p100;
+    p10 -> p101;
+    p11 -> p110[color="red"];
+    p11 -> p111[color="red"];
+}
