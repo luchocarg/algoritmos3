@@ -264,31 +264,37 @@ soluciones sucesoras de <span class="math inline">\(p\)</span> son <span
 class="math inline">\(p \oplus 0\)</span> y <span
 class="math inline">\(p \oplus 1\)</span>, donde <span
 class="math inline">\(\oplus\)</span> indica la concatenación.</p>
+<hr />
 <h2>a) Escribir el conjunto de soluciones candidatas para <span
 class="math inline">\(C = \left\{ 6,12,6 \right\}\)</span> y <span
 class="math inline">\(k = 12\)</span>.</h2>
 <p>Soluciones candidatas: <span class="math inline">\(\left\{
 (0,0,0),(1,0,0),(0,1,0),(0,0,1),(1,1,0),(1,0,1),(0,1,1),(1,1,1)
 \right\}\)</span> o sea, toda combinación posible.</p>
+<hr />
 <h2>b) Escribir el conjunto de soluciones válidas para <span
 class="math inline">\(C = \left\{ 6,12,6 \right\}\)</span> y <span
 class="math inline">\(k = 12\)</span>.</h2>
 <p>Conjunto de soluciones válidas: <span class="math inline">\(\left\{
 (1,0,1),(0,1,0) \right\}\)</span></p>
+<hr />
 <h2>c) Escribir el conjunto de soluciones parciales para <span
 class="math inline">\(C = \left\{ 6,12,6 \right\}\)</span> y <span
 class="math inline">\(k = 12\)</span>.</h2>
 <p>Conjunto de soluciones parciales: <span class="math inline">\(\left\{
 (),(1),(0),(0,0),(0,1),(1,0),(1,1) \right\}\)</span></p>
+<hr />
 <h2>d) Dibujar el árbol de <em>backtracking</em> correspondiente al
 algoritmo descrito arriba para <span class="math inline">\(C = \left\{
 6,12,6 \right\}\)</span> y <span class="math inline">\(k = 12\)</span>,
 indicando claramente la relación entre las distintas componentes del
 árbol y los conjuntos de los incisos anteriores.</h2>
 <p><img src="01-g1.svg" /></p>
+<hr />
 <h2>e) (SimpleTex no lo entiende y no lo voy a escribir a mano)</h2>
 <p><img src="enunciado-e.png" /></p>
 <p><strong>Me convencí!</strong></p>
+<hr />
 <h2>f) </h2>
 <p>Convencerse de que la siguiente es una implementación recursiva de ss
 en un lenguaje imperativo y de que retorna la solución para <span
@@ -308,7 +314,8 @@ y hay <span class="math inline">\(|C|\)</span> recursiones, luego tengo
 <span class="math inline">\(2^{|C|}\)</span> llamadas, cada una de
 tamaño <span class="math inline">\(O(1)\)</span> por lo que es <span
 class="math inline">\(O\left( 2^{|C|} \right)\)</span></p>
-<h2>Dibujar el árbol de llamadas recursivas para la entrada <span
+<hr />
+<h2>g) Dibujar el árbol de llamadas recursivas para la entrada <span
 class="math inline">\(C = \left\{ 6,12,6 \right\}\)</span> y <span
 class="math inline">\(k = 12\)</span>, y compararlo con el árbol de
 backtracking.</h2>
@@ -316,6 +323,7 @@ backtracking.</h2>
 <p>Podemos notar que el árbol es análogo al de backtracking, con la
 diferencia de que no hay podas de ningún tipo tal que no haga
 recursiones de más.</p>
+<hr />
 <h2>h) </h2>
 <p>Considerar la siguiente regla de factibilidad : <span
 class="math inline">\(p = \left( a_{1},...,a_{i} \right)\)</span> se
@@ -330,6 +338,7 @@ factibilidad.</p>
 </code></pre>
 <p><strong>Rta:</strong> Convencido <span
 class="math inline">\(😀\)</span></p>
+<hr />
 <h2>i) </h2>
 <p>Definir otra regla de factibilidad, mostrando que la misma es
 correcta; no es necesario implementarla.</p>
@@ -338,6 +347,7 @@ los elementos solo guardar los <span class="math inline">\(\leq
 k\)</span>, y si el valor mínimo es mayor a <span
 class="math inline">\(k\)</span>, no hay solución. Es trivial que esto
 funciona.</p>
+<hr />
 <h2>j) </h2>
 <p>Modificar la implementación para imprimir el subconjunto de C que
 suma k, si existe. Ayuda: mantenga un vector con la solución parcial p

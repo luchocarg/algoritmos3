@@ -12,24 +12,54 @@ $sum_(i=1)^n a_i c_i = k$. Asimismo,
 una solución parcial es un vector $p = (a_1, . . . , a_i)$ de números binarios con $0 ≤ i ≤ n$. Si $i < n$,
 las soluciones sucesoras de $p$ son $p ⊕ 0$ y $p ⊕ 1$, donde $⊕$ indica la concatenación.
 
+#line(
+  length: 100%,
+  stroke: 0.5pt
+)
+
 == a) Escribir el conjunto de soluciones candidatas para $C = {6, 12, 6}$ y $k = 12$.
 Soluciones candidatas: ${(0,0,0),(1,0,0),(0,1,0),(0,0,1),(1,1,0),(1,0,1),(0,1,1),(1,1,1)}$ o sea, toda combinación posible.
+
+#line(
+  length: 100%,
+  stroke: 0.5pt
+)
 
 == b) Escribir el conjunto de soluciones válidas para $C = {6, 12, 6}$ y $k = 12$.
 Conjunto de soluciones válidas: ${(1,0,1),(0,1,0)}$
 
+#line(
+  length: 100%,
+  stroke: 0.5pt
+)
+
 == c) Escribir el conjunto de soluciones parciales para $C = {6, 12, 6}$ y $k = 12$.
 Conjunto de soluciones parciales: ${(),(1),(0),(0,0),(0,1),(1,0),(1,1)}$
+
+#line(
+  length: 100%,
+  stroke: 0.5pt
+)
 
 == d) Dibujar el árbol de _backtracking_ correspondiente al algoritmo descrito arriba para $C = {6, 12, 6}$ y $k = 12$, indicando claramente la relación entre las distintas componentes del árbol y los conjuntos de los incisos anteriores.
 
 #image("01-g1.svg")
+
+#line(
+  length: 100%,
+  stroke: 0.5pt
+)
 
 == e) (SimpleTex no lo entiende y no lo voy a escribir a mano)
 
 #image("enunciado-e.png")
 
 *Me convencí!*
+
+#line(
+  length: 100%,
+  stroke: 0.5pt
+)
 
 == f) 
 
@@ -50,12 +80,22 @@ Me convencí, luego, su complejidad es tal que
 
 3) Cada subset_sum se extiende a 2 llamadas recursivas por recursión, y hay $|C|$ recursiones, luego tengo $2^(|C|)$ llamadas, cada una de tamaño $O(1)$ por lo que es $O(2^(|C|))$
 
-== Dibujar el árbol de llamadas recursivas para la entrada $C = {6, 12, 6}$ y $k = 12$, y compararlo con el árbol de backtracking.
+#line(
+  length: 100%,
+  stroke: 0.5pt
+)
+
+== g) Dibujar el árbol de llamadas recursivas para la entrada $C = {6, 12, 6}$ y $k = 12$, y compararlo con el árbol de backtracking.
 
 
 #image("01-g2.svg")
 
 Podemos notar que el árbol es análogo al de backtracking, con la diferencia de que no hay podas de ningún tipo tal que no haga recursiones de más.
+
+#line(
+  length: 100%,
+  stroke: 0.5pt
+)
 
 == h) 
 Considerar la siguiente regla de factibilidad : $p = (a_1, . . . , a_i)$ se puede extender a una solución
@@ -72,11 +112,21 @@ de factibilidad.
 
 *Rta:* Convencido $face$
 
+#line(
+  length: 100%,
+  stroke: 0.5pt
+)
+
 == i) 
 Definir otra regla de factibilidad, mostrando que la misma es correcta; no es necesario
 implementarla.
 
 *Sol:* Una regla de factibilidad podría ser ordenar los elementos solo guardar los $<= k$, y si el valor mínimo es mayor a $k$, no hay solución. Es trivial que esto funciona.
+
+#line(
+  length: 100%,
+  stroke: 0.5pt
+)
 
 == j) 
 Modificar la implementación para imprimir el subconjunto de C que suma k, si existe.
