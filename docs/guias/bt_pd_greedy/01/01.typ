@@ -90,7 +90,7 @@ Me convencí, luego, su complejidad es tal que
 
 #image("01-g2.svg")
 
-Podemos notar que el árbol es análogo al de backtracking, con la diferencia de que no hay podas de ningún tipo tal que no haga recursiones de más.
+Podemos notar que el árbol es análogo al de backtracking.
 
 #line(
   length: 100%,
