@@ -1,17 +1,26 @@
-def bt(M, i, j, n, res):
-    if i==n and j==n:
-        for i in range(n):
-            
+def magic_squares(n):
+    size = n**2
+    total = size**2
+    count = 0
 
-    for k in range(0,n**2):
-        if j == n and i != n:
-            M[i][j] = k
-            return bt(M, i+1, 1, n,res)
-        else:
-            M[i][j] = k
-            return bt(M, i, j+1, n,res)
+    def backtrack(grid, bitmask, row=0, col=0):
+        nonlocal count
+        if row == size:
+            # Verificar si es mágico (mismo chequeo que antes)
+            count += 1
+            return
+        
+        for num in range(1, total + 1):
+            mask = 1 << (num - 1)
+            if not (bitmask & mask):
+                # Actualizar celda y bitmask
+                grid[row][col] = num
+                next_row = row + (col == size-1)
+                next_col = 0 if col == size-1 else col + 1
+                backtrack([r.copy() for r in grid], bitmask | mask, next_row, next_col)
 
-n=3
-M = [[0 for _ in range(n)] for _ in range(n)]
+    backtrack([[0]*size for _ in range(size)], 0)
+    return count
 
-#bt(M,0,0,n-1, 0)
+print(magic_squares(1))
+print(magic_squares(2))

@@ -30,33 +30,35 @@ siguientes ideas:*
 - Para establecer el valor de la posición $(i, j +1)$ (o $(i+1, 1)$ si $j = n$ e $i != n$) se consideran todos los valores que aún no se encuentran en el cuadrado. Para cada valor posible, se establece dicho valor en la posición y se cuentan todos los cuadrados mágicos con esta nueva solución parcial.
 Mostrar los primeros dos niveles del árbol de backtracking para n = 3.
 
-*Idea inicial:* 
-
 ```
-Genero una matriz inicial M de nxn
+M = matriz n^2 de ceros
+U = {}
 res = 0
 
-mc(M,i,j):
-  --Le asigno un valor del conj {1...n^2} a M[i][j], n^2 veces, luego:
-    si i>n or j>n:
-      break loop
+f mc(i, j):
+    si i > n:
+        si es cuadrado mágico:
+            res += 1
+        return
+    for k en 1...n^2:
+        si k no está en U:
+            M[i][j] = k
+            U.push(k)
 
-    si i=0 y j=0:
-      --genero un vector V de tamaño n^2 tal que si es 1 está ocupado, si es 0 no.
+            si j = n e i != n:
+                i' = i+1
+                j' = 1
 
-    si i=n y j=n:
-      si M es magicuadrado:
-        res+=1
-      si j=n e i!=n:
-        return mc(M.copy,i+1,1)
-      sino
-        return mc(M.copy,i,j+1)
-
-  return res
+            si j < n:
+                i' = i
+                j' = j+1
+            
+            mc(i', j') #el backtrack!
+            U.pop(k)
+            M[i][j] = 0
 ```
 
-Falta formalizar bastante el algoritmo y probar su correctitud.
-
+#link("https://github.com/beekkles/TDA/tree/master/docs/guias/bt_pd_greedy/02/2b-bt-arbol.jpg")[#text(blue, strong[Primeros 2 niveles del árbol de backtracking $<-$])]
 
 #line(
   length: 100%,

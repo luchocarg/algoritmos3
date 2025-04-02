@@ -1,0 +1,167 @@
+// Backtracking Magic Square
+digraph {
+	rankdir=TB splines=ortho
+	R [label=<<TABLE BORDER="0" CELLBORDER="1"><TR><TD>0</TD><TD>0</TD><TD>0</TD></TR><TR><TD>0</TD><TD>0</TD><TD>0</TD></TR><TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_1 [label=<<TABLE BORDER="0" CELLBORDER="1">    <TR><TD BGCOLOR="#FFCCCC">1</TD><TD>0</TD><TD>0</TD></TR>    <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>    <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	R -> L1_1
+	L2_1_2 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">1</TD><TD BGCOLOR="#CCFFCC">2</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_1 -> L2_1_2
+	L2_1_3 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">1</TD><TD BGCOLOR="#CCFFCC">3</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_1 -> L2_1_3
+	L2_1_4 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">1</TD><TD BGCOLOR="#CCFFCC">4</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_1 -> L2_1_4
+	L2_1_5 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">1</TD><TD BGCOLOR="#CCFFCC">5</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_1 -> L2_1_5
+	L2_1_6 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">1</TD><TD BGCOLOR="#CCFFCC">6</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_1 -> L2_1_6
+	L2_1_7 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">1</TD><TD BGCOLOR="#CCFFCC">7</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_1 -> L2_1_7
+	L2_1_8 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">1</TD><TD BGCOLOR="#CCFFCC">8</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_1 -> L2_1_8
+	L2_1_9 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">1</TD><TD BGCOLOR="#CCFFCC">9</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_1 -> L2_1_9
+	L1_2 [label=<<TABLE BORDER="0" CELLBORDER="1">    <TR><TD BGCOLOR="#FFCCCC">2</TD><TD>0</TD><TD>0</TD></TR>    <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>    <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	R -> L1_2
+	L2_2_1 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">2</TD><TD BGCOLOR="#CCFFCC">1</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_2 -> L2_2_1
+	L2_2_3 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">2</TD><TD BGCOLOR="#CCFFCC">3</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_2 -> L2_2_3
+	L2_2_4 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">2</TD><TD BGCOLOR="#CCFFCC">4</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_2 -> L2_2_4
+	L2_2_5 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">2</TD><TD BGCOLOR="#CCFFCC">5</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_2 -> L2_2_5
+	L2_2_6 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">2</TD><TD BGCOLOR="#CCFFCC">6</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_2 -> L2_2_6
+	L2_2_7 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">2</TD><TD BGCOLOR="#CCFFCC">7</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_2 -> L2_2_7
+	L2_2_8 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">2</TD><TD BGCOLOR="#CCFFCC">8</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_2 -> L2_2_8
+	L2_2_9 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">2</TD><TD BGCOLOR="#CCFFCC">9</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_2 -> L2_2_9
+	L1_3 [label=<<TABLE BORDER="0" CELLBORDER="1">    <TR><TD BGCOLOR="#FFCCCC">3</TD><TD>0</TD><TD>0</TD></TR>    <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>    <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	R -> L1_3
+	L2_3_1 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">3</TD><TD BGCOLOR="#CCFFCC">1</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_3 -> L2_3_1
+	L2_3_2 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">3</TD><TD BGCOLOR="#CCFFCC">2</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_3 -> L2_3_2
+	L2_3_4 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">3</TD><TD BGCOLOR="#CCFFCC">4</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_3 -> L2_3_4
+	L2_3_5 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">3</TD><TD BGCOLOR="#CCFFCC">5</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_3 -> L2_3_5
+	L2_3_6 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">3</TD><TD BGCOLOR="#CCFFCC">6</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_3 -> L2_3_6
+	L2_3_7 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">3</TD><TD BGCOLOR="#CCFFCC">7</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_3 -> L2_3_7
+	L2_3_8 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">3</TD><TD BGCOLOR="#CCFFCC">8</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_3 -> L2_3_8
+	L2_3_9 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">3</TD><TD BGCOLOR="#CCFFCC">9</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_3 -> L2_3_9
+	L1_4 [label=<<TABLE BORDER="0" CELLBORDER="1">    <TR><TD BGCOLOR="#FFCCCC">4</TD><TD>0</TD><TD>0</TD></TR>    <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>    <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	R -> L1_4
+	L2_4_1 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">4</TD><TD BGCOLOR="#CCFFCC">1</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_4 -> L2_4_1
+	L2_4_2 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">4</TD><TD BGCOLOR="#CCFFCC">2</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_4 -> L2_4_2
+	L2_4_3 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">4</TD><TD BGCOLOR="#CCFFCC">3</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_4 -> L2_4_3
+	L2_4_5 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">4</TD><TD BGCOLOR="#CCFFCC">5</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_4 -> L2_4_5
+	L2_4_6 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">4</TD><TD BGCOLOR="#CCFFCC">6</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_4 -> L2_4_6
+	L2_4_7 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">4</TD><TD BGCOLOR="#CCFFCC">7</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_4 -> L2_4_7
+	L2_4_8 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">4</TD><TD BGCOLOR="#CCFFCC">8</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_4 -> L2_4_8
+	L2_4_9 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">4</TD><TD BGCOLOR="#CCFFCC">9</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_4 -> L2_4_9
+	L1_5 [label=<<TABLE BORDER="0" CELLBORDER="1">    <TR><TD BGCOLOR="#FFCCCC">5</TD><TD>0</TD><TD>0</TD></TR>    <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>    <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	R -> L1_5
+	L2_5_1 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">5</TD><TD BGCOLOR="#CCFFCC">1</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_5 -> L2_5_1
+	L2_5_2 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">5</TD><TD BGCOLOR="#CCFFCC">2</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_5 -> L2_5_2
+	L2_5_3 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">5</TD><TD BGCOLOR="#CCFFCC">3</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_5 -> L2_5_3
+	L2_5_4 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">5</TD><TD BGCOLOR="#CCFFCC">4</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_5 -> L2_5_4
+	L2_5_6 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">5</TD><TD BGCOLOR="#CCFFCC">6</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_5 -> L2_5_6
+	L2_5_7 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">5</TD><TD BGCOLOR="#CCFFCC">7</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_5 -> L2_5_7
+	L2_5_8 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">5</TD><TD BGCOLOR="#CCFFCC">8</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_5 -> L2_5_8
+	L2_5_9 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">5</TD><TD BGCOLOR="#CCFFCC">9</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_5 -> L2_5_9
+	L1_6 [label=<<TABLE BORDER="0" CELLBORDER="1">    <TR><TD BGCOLOR="#FFCCCC">6</TD><TD>0</TD><TD>0</TD></TR>    <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>    <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	R -> L1_6
+	L2_6_1 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">6</TD><TD BGCOLOR="#CCFFCC">1</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_6 -> L2_6_1
+	L2_6_2 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">6</TD><TD BGCOLOR="#CCFFCC">2</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_6 -> L2_6_2
+	L2_6_3 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">6</TD><TD BGCOLOR="#CCFFCC">3</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_6 -> L2_6_3
+	L2_6_4 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">6</TD><TD BGCOLOR="#CCFFCC">4</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_6 -> L2_6_4
+	L2_6_5 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">6</TD><TD BGCOLOR="#CCFFCC">5</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_6 -> L2_6_5
+	L2_6_7 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">6</TD><TD BGCOLOR="#CCFFCC">7</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_6 -> L2_6_7
+	L2_6_8 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">6</TD><TD BGCOLOR="#CCFFCC">8</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_6 -> L2_6_8
+	L2_6_9 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">6</TD><TD BGCOLOR="#CCFFCC">9</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_6 -> L2_6_9
+	L1_7 [label=<<TABLE BORDER="0" CELLBORDER="1">    <TR><TD BGCOLOR="#FFCCCC">7</TD><TD>0</TD><TD>0</TD></TR>    <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>    <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	R -> L1_7
+	L2_7_1 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">7</TD><TD BGCOLOR="#CCFFCC">1</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_7 -> L2_7_1
+	L2_7_2 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">7</TD><TD BGCOLOR="#CCFFCC">2</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_7 -> L2_7_2
+	L2_7_3 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">7</TD><TD BGCOLOR="#CCFFCC">3</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_7 -> L2_7_3
+	L2_7_4 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">7</TD><TD BGCOLOR="#CCFFCC">4</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_7 -> L2_7_4
+	L2_7_5 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">7</TD><TD BGCOLOR="#CCFFCC">5</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_7 -> L2_7_5
+	L2_7_6 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">7</TD><TD BGCOLOR="#CCFFCC">6</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_7 -> L2_7_6
+	L2_7_8 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">7</TD><TD BGCOLOR="#CCFFCC">8</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_7 -> L2_7_8
+	L2_7_9 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">7</TD><TD BGCOLOR="#CCFFCC">9</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_7 -> L2_7_9
+	L1_8 [label=<<TABLE BORDER="0" CELLBORDER="1">    <TR><TD BGCOLOR="#FFCCCC">8</TD><TD>0</TD><TD>0</TD></TR>    <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>    <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	R -> L1_8
+	L2_8_1 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">8</TD><TD BGCOLOR="#CCFFCC">1</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_8 -> L2_8_1
+	L2_8_2 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">8</TD><TD BGCOLOR="#CCFFCC">2</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_8 -> L2_8_2
+	L2_8_3 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">8</TD><TD BGCOLOR="#CCFFCC">3</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_8 -> L2_8_3
+	L2_8_4 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">8</TD><TD BGCOLOR="#CCFFCC">4</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_8 -> L2_8_4
+	L2_8_5 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">8</TD><TD BGCOLOR="#CCFFCC">5</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_8 -> L2_8_5
+	L2_8_6 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">8</TD><TD BGCOLOR="#CCFFCC">6</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_8 -> L2_8_6
+	L2_8_7 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">8</TD><TD BGCOLOR="#CCFFCC">7</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_8 -> L2_8_7
+	L2_8_9 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">8</TD><TD BGCOLOR="#CCFFCC">9</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_8 -> L2_8_9
+	L1_9 [label=<<TABLE BORDER="0" CELLBORDER="1">    <TR><TD BGCOLOR="#FFCCCC">9</TD><TD>0</TD><TD>0</TD></TR>    <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>    <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	R -> L1_9
+	L2_9_1 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">9</TD><TD BGCOLOR="#CCFFCC">1</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_9 -> L2_9_1
+	L2_9_2 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">9</TD><TD BGCOLOR="#CCFFCC">2</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_9 -> L2_9_2
+	L2_9_3 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">9</TD><TD BGCOLOR="#CCFFCC">3</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_9 -> L2_9_3
+	L2_9_4 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">9</TD><TD BGCOLOR="#CCFFCC">4</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_9 -> L2_9_4
+	L2_9_5 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">9</TD><TD BGCOLOR="#CCFFCC">5</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_9 -> L2_9_5
+	L2_9_6 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">9</TD><TD BGCOLOR="#CCFFCC">6</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_9 -> L2_9_6
+	L2_9_7 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">9</TD><TD BGCOLOR="#CCFFCC">7</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_9 -> L2_9_7
+	L2_9_8 [label=<<TABLE BORDER="0" CELLBORDER="1">            <TR><TD BGCOLOR="#FFCCCC">9</TD><TD BGCOLOR="#CCFFCC">8</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR>            <TR><TD>0</TD><TD>0</TD><TD>0</TD></TR></TABLE>> shape=none]
+	L1_9 -> L2_9_8
+}
