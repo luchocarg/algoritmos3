@@ -84,7 +84,7 @@ Y el término dominante es $n^2 !$, por lo que es $O(n^2 !)$ (que de hecho, es e
 
 $ sum_(k=0)^n^2 (n^2 !)/(n^2-k)! = n^2 ! dot sum_(k=0)^n^2 1/(n^2-k)! $
 
-Luego, el segundo término no es más que los primeros $n^2$ términos de la serie de Euler, Entonces:
+Luego, el segundo término no es más que los primeros $n^2$ términos de Euler definido como serie de Taylor:
 
 
 $ sum_(k=0)^n^2 1/(n^2-k)! approx e $
