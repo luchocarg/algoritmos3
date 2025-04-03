@@ -58,7 +58,7 @@ f mc(i, j):
             M[i][j] = 0
 ```
 
-#link("https://github.com/beekkles/TDA/tree/master/docs/guias/bt_pd_greedy/02/2b-bt-arbol.jpg")[#text(blue, strong[Primeros 2 niveles del árbol de backtracking $<-$])]
+#link("https://raw.githubusercontent.com/beekkles/TDA/refs/heads/master/docs/guias/bt_pd_greedy/02/2b-bt-arbol.jpg")[#text(blue, strong[Primeros 2 niveles del árbol de backtracking $<-$])]
 
 #line(
   length: 100%,
