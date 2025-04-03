@@ -276,9 +276,17 @@ parcial de la fila no supere el número mágico. Verificar también que la
 suma parcial de los valores de las columnas no supere el número mágico.
 Introducir estas podas al algoritmo e implementarlo en la computadora.
 ¿Puede mejorar estas podas?</strong></p>
-<p>Se podría mejorar chequeando las diagonales, otra poda posible es ver
-si los <span class="math inline">\(k\)</span> elementos restantes
-podrían llegar a sumar el restante necesario del número mágico.</p>
+<p>Se podría mejorar chequeando las diagonales, podríamos ver simetría,
+reflexiones, etc.</p>
+<p><a
+href="https://raw.githubusercontent.com/beekkles/TDA/refs/heads/master/docs/guias/bt_pd_greedy/02/magicuadrados.py">Acá
+está la implementación</a></p>
+<p><strong>Sin estas podas:</strong></p>
+<p>0.4648 segundos</p>
+<p><strong>Con estas podas:</strong></p>
+<p>0.0706 segundos</p>
+<p><strong>Supone una mejora aproximada del 84%</strong></p>
+<p>(Ryzen 7 7700u, CPython)</p>
 <hr />
 <p><strong>e) Demostrar que el número mágico de un cuadrado mágico de
 orden n es siempre <span class="math inline">\(\frac{n^{3} +

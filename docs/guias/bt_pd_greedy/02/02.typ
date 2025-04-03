@@ -106,7 +106,7 @@ estas podas?*
 
 Se podría mejorar chequeando las diagonales, podríamos ver simetría, reflexiones, etc.
 
-#link("acá está la implementación")[Acá está la implementación]
+#link("https://raw.githubusercontent.com/beekkles/TDA/refs/heads/master/docs/guias/bt_pd_greedy/02/magicuadrados.py")[Acá está la implementación]
 
 *Sin estas podas:*
 
