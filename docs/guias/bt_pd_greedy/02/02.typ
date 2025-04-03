@@ -104,7 +104,21 @@ también que la suma parcial de los valores de las columnas no supere el número
 Introducir estas podas al algoritmo e implementarlo en la computadora. ¿Puede mejorar
 estas podas?*
 
-Se podría mejorar chequeando las diagonales, otra poda posible es ver si los $k$ elementos restantes podrían llegar a sumar el restante necesario del número mágico.
+Se podría mejorar chequeando las diagonales, podríamos ver simetría, reflexiones, etc.
+
+#link("acá está la implementación")[Acá está la implementación]
+
+*Sin estas podas:*
+
+0.4648 segundos
+
+*Con estas podas:*
+
+0.0706 segundos
+
+*Supone una mejora aproximada del 84%*
+
+(Ryzen 7 7700u, CPython)
 
 #line(
   length: 100%,

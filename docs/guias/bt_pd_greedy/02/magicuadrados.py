@@ -1,26 +1,68 @@
-def magic_squares(n):
-    size = n**2
-    total = size**2
-    count = 0
+import time
 
-    def backtrack(grid, bitmask, row=0, col=0):
-        nonlocal count
-        if row == size:
-            # Verificar si es mágico (mismo chequeo que antes)
-            count += 1
-            return
-        
-        for num in range(1, total + 1):
-            mask = 1 << (num - 1)
-            if not (bitmask & mask):
-                # Actualizar celda y bitmask
-                grid[row][col] = num
-                next_row = row + (col == size-1)
-                next_col = 0 if col == size-1 else col + 1
-                backtrack([r.copy() for r in grid], bitmask | mask, next_row, next_col)
+n = 3
+res = 0
+num_magico = (n**3+n)//2
 
-    backtrack([[0]*size for _ in range(size)], 0)
-    return count
+def es_magico(M):
 
-print(magic_squares(1))
-print(magic_squares(2))
+    for fila in M:
+        num_magico = (n**3+n)//2
+        if sum(fila) != num_magico:
+            return False
+    
+    for j in range(n):
+        if sum(M[i][j] for i in range(n)) != num_magico:
+            return False
+    
+    if sum(M[i][i] for i in range(n)) != num_magico:
+        return False
+    
+    if sum(M[i][n-i-1] for i in range(n)) != num_magico:
+        return False
+    
+    return True
+
+def mc(M, i, j, bitmask):
+    global res
+    if i == n:
+        if es_magico(M):
+            res += 1
+        return
+    
+    if j == n and i!=n:
+        mc(M, i+1, 0, bitmask)
+        return
+    
+    for k in range(1, n**2 + 1):
+        if bitmask[k] == 0:
+            M[i][j] = k
+            bitmask[k] = 1
+            '''
+            #PODAS
+            if j==n-1 and i > 0:
+                if sum(M[i]) != num_magico:
+                    bitmask[k] = 0
+                    M[i][j] = 0
+                    continue
+
+            if i==n-1 and j > 0:
+                if sum(M[l][j] for l in range(n)) != num_magico:
+                    bitmask[k] = 0
+                    M[i][j] = 0
+                    continue'
+            '''
+            #Backtrack
+            mc(M, i, j+1, bitmask)
+            bitmask[k] = 0
+            M[i][j] = 0
+
+M = [[0 for _ in range(n)] for _ in range(n)]
+bitmask = [0 for _ in range(n**2 + 1)] 
+
+start = time.perf_counter()
+mc(M, 0, 0, bitmask)
+end = time.perf_counter()
+
+print(f'Cantidad de magicuadrados de orden {n}:', res)
+print(f'{end - start:.4f} segundos')
