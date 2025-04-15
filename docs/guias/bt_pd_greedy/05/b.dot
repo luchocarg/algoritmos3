@@ -1,0 +1,28 @@
+digraph G {
+    node [shape=box, fontname="Arial"];
+    
+    "N0" [label="(i=3, j=1)"];
+    "N1" [label="(i=2, j=1)"];
+    "N2" [label="(i=2, j=0)"];
+    "N3" [label="(i=1, j=1)"];
+    "N4" [label="(i=1, j=0)", color="red"];
+    "N5" [label="(i=0, j=1)"];
+    "N6" [label="(i=0, j=0)"];
+    "N7" [label="(i=1, j=0)", color="red"];
+    "N8" [label="(i=0, j=0)", color="red"];
+
+    "N0" -> "N1" [label="ss'c(2, 1)"];
+    "N0" -> "N2" [label="ss'c(2, 0)"];
+
+    "N1" -> "N3" [label="ss'c(1, 1)"];
+    "N1" -> "N4" [label="ss'c(1, 0)"]; 
+
+    "N2" -> "N4" [label="ss'c(1, 0)"];
+    "N2" -> "N6" [label="ss'c(1, -1)"];
+
+    "N3" -> "N5" [label="ss'c(0, 1)"];
+    "N3" -> "N6" [label="ss'c(0, 0)"];
+
+    "N4" -> "N7" [label="ss'c(0, 0)"];
+    "N4" -> "N8" [label="ss'c(0, -1)"];
+}
