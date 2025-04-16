@@ -56,9 +56,7 @@ f solve(p):
     
     para cada j en [1...n]:
         para cada c en [0...j]:
-            actual[c] = old[c]
-            si 0 < c: actual[c] = max(actual[c], old[c-1]-p[j-1])
-            si c < j: actual[c] = max(actual[c], old[c+1]+p[j-1])
+            actual[c] = max(old[c], old[c-1]-p[j-1], old[c+1]+p[j-1])
 
         para cada c en [j+1...n]:
             actual[c] = -inf
@@ -68,7 +66,7 @@ f solve(p):
     ret old[0]
 ```
 
-La complejidad temporal es $O(n^2)$, hago $n$ loops de tamaño $1,2,...,n =>$ $sum_(j=0)^n j = (n^2+n)/2 in O(n^2)$
+La complejidad temporal es $O(n^2)$, trivial, hago $n$ loops de 2 loops sumados de $0...j$ y $j+1...n$
 
 La complejidad espacial, como guardamos solo el nivel anterior y el actual, es $2 dot n in O(n)$
 
