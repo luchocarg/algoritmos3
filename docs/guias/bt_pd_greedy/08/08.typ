@@ -35,9 +35,9 @@ f solve(C):
     
     min_costo = inf
 
-    para cada c in C: //O(n)
-      si i < c < j:
-        min_costo = min(min_costo, j-i + min(CE(i,c),CE(c,j)))
+    para cada k in [1...n]: //O(n)
+      si i < C[k] < j:
+        min_costo = min(min_costo, j-i + min(CE(i,C[k]),CE(C[k],j)))
     
     memo[i][j] = min_costo
     ret memo[i][j]
@@ -49,6 +49,12 @@ Cada nodo del árbol de recursión es $O(n)$, y por `memo`, hay máximo $n^2$ ll
 
 *Bottom-up*
 ```
+
+f solve(C):
+  para cada l en [1...n]:
+    para cada i en [0...n-l]:
+      j = i+l
+      memo[i][j] = -inf 
 
 
 ```
