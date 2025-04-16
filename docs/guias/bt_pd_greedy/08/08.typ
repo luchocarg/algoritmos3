@@ -43,7 +43,7 @@ f solve(C):
     ret memo[i][j]
 
 ```
-Complejidad espacial, $0<=i,j<=n => O(n^2)$ 
+Complejidad espacial, $(0<=i,j<=n) => O(n^2)$ 
 
 Cada nodo del árbol de recursión es $O(n)$, y por `memo`, hay máximo $n^2$ llamados, luego es $O(n^3)$ 
 
