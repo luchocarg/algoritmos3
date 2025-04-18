@@ -11,7 +11,7 @@
 I_maximo = {}
 suma_maxima = -inf 
 
-bt (pos, I):    //k entero, I conjunto
+f bt(pos, I):    //k entero, I conjunto
 
   //Caso base 
   Si |I| = k
@@ -34,11 +34,17 @@ bt(0,{})
 //Luego, el resultado es I_maximo.
 ```
 
+*Solución candidata:* $I$
+
+*Solución válida:* $sum_(i,j in I) M_(i j)$, $|I| = k$
+
+*Solución parcial:* $I$, $|I| < k$
+
 == b)
 
-Tenemos $binom(n^2,k)$ ramas, cada una $O(1)$ y cada hoja es $O(k^2)$
+Tenemos $binom(n,k)$ ramas, cada una $O(1)$ y cada hoja es $O(k^2)$
 
-Luego la complejidad temporal es $O(binom(n^2,k) dot k²)$
+Luego la complejidad temporal es $O(binom(n,k) dot k²) in O(2^n dot k²)$
 
 La complejidad espacial es $O(k)$, dado que solo usamos un vector $I$ de tamaño $k$
 

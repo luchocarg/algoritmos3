@@ -177,7 +177,7 @@
 <pre><code>I_maximo = {}
 suma_maxima = -inf 
 
-bt (pos, I):    //k entero, I conjunto
+f bt(pos, I):    //k entero, I conjunto
 
   //Caso base 
   Si |I| = k
@@ -199,12 +199,21 @@ bt (pos, I):    //k entero, I conjunto
 bt(0,{})
 //Luego, el resultado es I_maximo.
 </code></pre>
+<p><strong>Solución candidata:</strong> <span
+class="math inline">\(I\)</span></p>
+<p><strong>Solución válida:</strong> <span
+class="math inline">\(\sum_{i,j \in I}M_{ij}\)</span>, <span
+class="math inline">\(|I| = k\)</span></p>
+<p><strong>Solución parcial:</strong> <span
+class="math inline">\(I\)</span>, <span class="math inline">\(|I| &lt;
+k\)</span></p>
 <h2>b)</h2>
-<p>Tenemos <span class="math inline">\(\binom{n^{2}}{k}\)</span> ramas,
-cada una <span class="math inline">\(O(1)\)</span> y cada hoja es <span
+<p>Tenemos <span class="math inline">\(\binom{n}{k}\)</span> ramas, cada
+una <span class="math inline">\(O(1)\)</span> y cada hoja es <span
 class="math inline">\(O\left( k^{2} \right)\)</span></p>
 <p>Luego la complejidad temporal es <span class="math inline">\(O\left(
-\binom{n^{2}}{k} \cdot k² \right)\)</span></p>
+\binom{n}{k} \cdot k² \right) \in O\left( 2^{n} \cdot k²
+\right)\)</span></p>
 <p>La complejidad espacial es <span class="math inline">\(O(k)\)</span>,
 dado que solo usamos un vector <span class="math inline">\(I\)</span> de
 tamaño <span class="math inline">\(k\)</span></p>
