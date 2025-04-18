@@ -2,6 +2,16 @@ import os
 import subprocess
 
 BASE_DIR = "docs/guias"
+
+'''
+#!/bin/bash
+if [ -z "$1" ]; then
+    echo "Error: No es .typ"
+    echo "Uso: typst-to-html <archivo.typ>"
+    exit 1
+fi
+pandoc --mathjax -s -f typst -t html -o "${1%.*}.html" "$1"
+'''
 TYPST_CMD = "typst-to-html"
 def convertir_typ_a_html(archivo_typ, carpeta_destino):
     try:
