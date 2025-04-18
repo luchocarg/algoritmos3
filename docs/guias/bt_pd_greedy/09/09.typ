@@ -69,43 +69,28 @@ Complejidad espacial: es una matriz de $n dot m$ y la pila de recursiones está 
 
 Complejidad temporal: también limitada por la cantidad de estados, dado que cada recursión es $O(1)$, nos queda $O(n dot m)$
 
-== Bottom-up (CAMBIAR POR VECTOR ANTERIOR y ACTUAL)
+== Bottom-up
 
 *Nota:* lo hice 1-indexed.
 
 ```
 f solve(A, n, m):
 
-  fila = vector de inf de tamaño n
-  col = vector de inf de tamaño m
-
   si n>=m:
-    para cada i en 1...n:
-      para cada j en 1...m:
+    memo = [inf]*(n+1)
+    memo[n] = 1
 
-        if i=n and j=m:
-          memo[i] = 0
-
-        else: 
-          actual = min(memo[i],memo[i+1]) - A[i][j]
-          if actual > 0:
-            memo[i] = actual 
-          else:
-            memo[i] = 1 
+    para cada i en n...1:
+      para cada j en m...1:
+        memo[i] = max(1,min(memo[i],memo[i+1]) - A[i][j])
 
   sino:
-    para cada j en 1...m:
-      para cada i en 1...n:
+    memo = [inf]*(m+1)
+    memo[m] = 1
 
-        if i=n and j=m:
-          memo[j] = 0
-
-        else: 
-          actual = min(memo[j],memo[j+1]) - A[i][j]
-          if actual > 0:
-            memo[j] = actual 
-          else:
-            memo[j] = 1 
+    para cada j en m...1:
+      para cada i en n...1:
+        memo = max(1,min(memo[j],memo[j+1]) - A[i][j])
 
   ret memo[1]
 ```
@@ -119,3 +104,20 @@ Complejidad temporal: en ambas opciones posibles son dos for loops anidados de $
 #image("image-5.png")
 
 Está en el item anterior.
+
+Implementación:
+
+```python
+  if n < m:
+      A = list(zip(*A))
+      n, m = m, n
+
+  memo = [float('inf')]*(m+1)
+  memo[m-1] = 1
+
+  for i in reversed(range(n)):
+      for j in reversed(range(m)):
+          memo[j] = max(1, min(memo[j],memo[j+1]) - A[i][j])
+
+  return memo[0]
+```
