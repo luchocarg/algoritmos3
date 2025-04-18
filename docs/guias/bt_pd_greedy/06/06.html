@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>04</title>
+  <title>06</title>
   <style>
     html {
       color: #1a1a1a;
@@ -171,53 +171,51 @@
   type="text/javascript"></script>
 </head>
 <body>
-<h1>Enunciado</h1>
-<p>Un vértice <span class="math inline">\(v\)</span> de un grafo <span
-class="math inline">\(G\)</span> es un punto de articulación si <span
-class="math inline">\(G \smallsetminus v\)</span> tiene más componentes
-conexas que G. Por otro lado, un grafo es biconexo si es conexo y no
-tiene puntos de articulación.</p>
-<p>Demostrar, usando inducción en la cantidad de vértices, que todo
-grafo de <span class="math inline">\(n\)</span> vértices que tiene más
-de <span class="math inline">\(\frac{(n - 1)(n - 2)}{2}\)</span> aristas
-es conexo. Opcionalmente, puede demostrar la misma propiedad usando
-otras técnicas de demostración.</p>
-<h1>Solución</h1>
-<p>Sea <span class="math inline">\(G = (V,E)\)</span> quiero ver que
-<span class="math inline">\(|V| = n \land |E| = m &gt; \frac{(n - 1)(n -
-2)}{2} \Rightarrow G\)</span> conexo.</p>
-<p><strong>Por inducción en la cantidad de nodos:</strong></p>
-<p><strong>Hipótesis inductiva</strong>:</p>
-<p><span class="math display">\[P(n - 1):m&#39; &gt; \frac{(n - 2)(n -
-3)}{2} \Rightarrow G&#39;\text{ conexo. }\]</span></p>
-<p><strong>Caso base:</strong> <span class="math display">\[P(2):m &gt;
-\frac{(2 - 1)(2 - 2)}{2} \Rightarrow m &gt; 0 \Rightarrow n = 2 \land m
-= 1\text{  por lo que es conexo. }\]</span></p>
-<p><strong>Paso inductivo:</strong> <span class="math inline">\(P(n - 1)
-\Rightarrow P(n)\)</span></p>
-<p>Tenemos <span class="math inline">\(P(n):m &gt; \frac{(n - 1)(n -
-2)}{2}\)</span></p>
-<p>Y <span class="math inline">\(\frac{(n - 1)(n - 2)}{2} = \binom{n -
-1}{2} &lt; m\)</span>, y <span class="math inline">\(\binom{n -
-1}{2}\)</span> es la cantidad de aristas máxima de <span
-class="math inline">\(K_{n - 1}\)</span>, y tenemos <span
-class="math inline">\(n\)</span> nodos y al menos una arista más, por lo
-que la única chance es que el nodo restante esté conectado por una o más
-aristas a <span class="math inline">\(K_{n - 1}\)</span> tal que sea
-conexo.</p>
-<p>Luego consideremos <span class="math inline">\(G&#39;\)</span> tal
-que sacamos un nodo <span class="math inline">\(v \in V\)</span>
-cualquiera a <span class="math inline">\(G\)</span>, nos queda que <span
-class="math inline">\(m&#39; = m - d(v)\)</span></p>
-<p>Por H.I: <span class="math inline">\(m&#39; = m - d(v) &gt; \frac{(n
-- 2)(n - 3)}{2} \Rightarrow G&#39;\text{ conexo}\)</span></p>
-<p>Entonces si agregamos <span class="math inline">\(v\)</span> de
-nuevo, <span class="math inline">\(G&#39;\)</span> sigue siendo conexo
-ya que agregarle las aristas que conectaban <span
-class="math inline">\(v\)</span> no reduce <span
-class="math inline">\(m\)</span></p>
-<p>Por lo tanto, cualquier grafo con <span
-class="math inline">\(n\)</span> vértices y más de <span
-class="math inline">\(\binom{n - 1}{2}\)</span> aristas es conexo.</p>
+<p><img src="image.png" /> <img src="image-1.png" /></p>
+<p>Defino <span class="math inline">\(\prec\)</span> como el orden <span
+class="math inline">\(c&#39;,q&#39;\)</span> tal que <span
+class="math inline">\(\min\limits_{\prec}\)</span> implica ver primero
+el mínimo valor <span class="math inline">\(c&#39;\)</span> y luego, el
+mínimo <span class="math inline">\(q&#39;\)</span> para “desempatar”</p>
+<p><span class="math display">\[\text{ cc}(B,c) = \begin{cases}
+(0,0)\text{ si }c \leq 0 \\
+(\infty,\infty)\text{ si }B = \varnothing \land c &gt; 0 \\
+\min\limits_{\prec}\left\{ \left( \max(0,c&#39; + b_{n} - c),q&#39; + 1
+\right),\text{cc}\left( B - \left\{ b_{n} \right\},c \right)
+\right\}\text{ si }c &gt; 0 \land B \neq \varnothing
+\end{cases}\]</span></p>
+<p><span class="math display">\[(c&#39;,q&#39;) = \text{ cc}\left( B -
+\left\{ b_{n} \right\},c - b_{n} \right)\]</span></p>
+<hr />
+<p><img src="image-2.png" /></p>
+<p><strong>TO DO</strong></p>
+<hr />
+<p><img src="image-3.png" /> <span class="math inline">\(B = \left\{
+b_{1}\ldots b_{n} \right\}\)</span></p>
+<p><span class="math display">\[\text{ cc}&#39;_{B}(i,j) = \begin{cases}
+(0,0)\text{ si }j \leq 0 \\
+(\infty,\infty)\text{ si }i = 0 \land j &gt; 0 \\
+\min\limits_{\prec}\left\{ \left( \max(0,c&#39;&#39; + b_{i} -
+j),q&#39;&#39; + 1 \right),\text{cc}&#39;_{B}(i - 1,j) \right\}\text{ si
+}i &gt; 0 \land j &gt; 0
+\end{cases}\]</span> <span
+class="math display">\[(c&#39;&#39;,q&#39;&#39;) = \text{
+cc}&#39;_{B}\left( i - 1,j - b_{i} \right)\]</span></p>
+<hr />
+<p><img src="image-4.png" /></p>
+<p>Definimos una matriz de tamaño <span class="math inline">\((n + 1)
+\cdot (c + 1)\)</span> tal que cada posible combinación de cantidad de
+billetes (<span class="math inline">\(0...n\)</span>) y costos (<span
+class="math inline">\(0...c\)</span>) sea accesible en <span
+class="math inline">\(O(1)\)</span></p>
+<p>La complejidad de esto es <span class="math inline">\(O(n \cdot
+c)\)</span></p>
+<hr />
+<p><img src="image-6.png" style="width:80.0%" /></p>
+<p><strong>TO DO</strong></p>
+<hr />
+<p><img src="image-7.png" /></p>
+<p><span class="math inline">\(\text{cc}&#39;_{B}(n,c)\)</span> resuelve
+el problema.</p>
 </body>
 </html>
