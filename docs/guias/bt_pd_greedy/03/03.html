@@ -182,8 +182,9 @@ f bt(pos, I):    //k entero, I conjunto
   //Caso base 
   Si |I| = k
     sum_total = 0
-    para toda permutación i,j de [1 ... k]
-      sum_total += M(I[i],I[j])
+    para i en [1 ... |I|]
+      para j en [1 ... |I|]
+        sum_total += M(I[i],I[j])
     
     si total &gt; suma_maxima:
       suma_maxima = total
@@ -195,7 +196,6 @@ f bt(pos, I):    //k entero, I conjunto
     bt(i+1,I+{i})
 
 //Se resuelve con:
-
 bt(0,{})
 //Luego, el resultado es I_maximo.
 </code></pre>
@@ -208,15 +208,21 @@ class="math inline">\(|I| = k\)</span></p>
 class="math inline">\(I\)</span>, <span class="math inline">\(|I| &lt;
 k\)</span></p>
 <h2>b)</h2>
-<p>Tenemos <span class="math inline">\(\binom{n}{k}\)</span> ramas, cada
-una <span class="math inline">\(O(1)\)</span> y cada hoja es <span
-class="math inline">\(O\left( k^{2} \right)\)</span></p>
-<p>Luego la complejidad temporal es <span class="math inline">\(O\left(
-\binom{n}{k} \cdot k² \right) \in O\left( 2^{n} \cdot k²
+<p>Cada nodo interno es <span class="math inline">\(O(1)\)</span> y hay
+<span class="math inline">\(\sum_{i = 0}^{k - 1}\binom{n}{i} \leq
+2^{n}\)</span>, esto es <span class="math inline">\(O\left( 2^{n} \cdot
+1 \right) \in O\left( 2^{n} \right)\)</span></p>
+<p>Cada hoja (caso base) es <span class="math inline">\(\sum_{i,j \in
+I}M_{ij} \in O\left( k^{2} \right)\)</span> y al final tendremos <span
+class="math inline">\(\binom{n}{k}\)</span> hojas (toda combinación
+posible de tamaño <span class="math inline">\(k\)</span> de <span
+class="math inline">\(n\)</span> elementos), con <span
+class="math inline">\(O\left( \binom{n}{k} \right) \in O\left( 2^{n}
+\right)\)</span>, entonces la complejidad de las hojas es <span
+class="math inline">\(O\left( 2^{n} \cdot k^{2} \right)\)</span></p>
+<p>La complejidad final es: <span class="math inline">\(O\left( 2^{n}
+\cdot 1 + 2^{n} \cdot k^{2} \right) \in O\left( 2^{n} \cdot k^{2}
 \right)\)</span></p>
-<p>La complejidad espacial es <span class="math inline">\(O(k)\)</span>,
-dado que solo usamos un vector <span class="math inline">\(I\)</span> de
-tamaño <span class="math inline">\(k\)</span></p>
 <h2>c)</h2>
 <p>Una poda podría ser teniendo una solución completa (i.e. <span
 class="math inline">\(|I| = k\)</span>) ver que la suma restante para

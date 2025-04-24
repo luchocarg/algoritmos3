@@ -16,8 +16,9 @@ f bt(pos, I):    //k entero, I conjunto
   //Caso base 
   Si |I| = k
     sum_total = 0
-    para toda permutación i,j de [1 ... k]
-      sum_total += M(I[i],I[j])
+    para i en [1 ... |I|]
+      para j en [1 ... |I|]
+        sum_total += M(I[i],I[j])
     
     si total > suma_maxima:
       suma_maxima = total
@@ -29,7 +30,6 @@ f bt(pos, I):    //k entero, I conjunto
     bt(i+1,I+{i})
 
 //Se resuelve con:
-
 bt(0,{})
 //Luego, el resultado es I_maximo.
 ```
@@ -42,11 +42,12 @@ bt(0,{})
 
 == b)
 
-Tenemos $binom(n,k)$ ramas, cada una $O(1)$ y cada hoja es $O(k^2)$
+Cada nodo interno es $O(1)$ y hay $sum_(i=0)^(k-1) binom(n,i) <= 2^n$, esto es $O(2^n dot 1) in O(2^n)$
 
-Luego la complejidad temporal es $O(binom(n,k) dot k²) in O(2^n dot k²)$
+Cada hoja (caso base) es $sum_(i,j in I) M_(i j) in O(k^2)$ y al final tendremos $binom(n,k)$ hojas (toda combinación posible de tamaño $k$ de $n$ elementos), con $O(binom(n,k)) in O(2^n)$, entonces la complejidad de las hojas es $O(2^n dot k^2)$
 
-La complejidad espacial es $O(k)$, dado que solo usamos un vector $I$ de tamaño $k$
+La complejidad final es: $O(2^n dot 1 + 2^n dot k^2) in O(2^n dot k^2)$
+
 
 == c)
 
