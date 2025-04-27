@@ -25,4 +25,4 @@ for (v,w) in E:
     max_arista = (v,w) 
 `
 
-Si bien es $O(m dot n^2) in O(n^4)$, no hay forma de hacerlo más eficiente, ya que buscamos para cada arista, para todo par s,t
+Si bien es $O(n^3 + m dot n^2) in O(n^4)$, no hay forma de hacerlo más eficiente, ya que buscamos para cada arista, para todo par s,t

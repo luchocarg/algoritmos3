@@ -1,12 +1,36 @@
 #image("image.png")
 
-Hacemos un FW tal que en cada iteración chequee:
 
-` si d[i][j] < d[i][k]+d[k][j]: retorna False, i,k,j
-`
+```typc
+f is_FW(M)
 
-y al final si no breakeó los loops, `ret True`, a este algoritmo lo llamaté `is_FW(M)`
+  for i in 1...n:
+    for j in 1...n:
+        if M[i][j] != M[j][i]:
+            return False, (i,j)
 
-Luego, para devolver un grafo $G$ con la mínima cantidad de aristas posibles alcanza con otra modificación de FW tal que:
+  for k in range 1...n:
+    for i in range 1...n:
+      for j in range 1...n:
+        si M[i][j] > M[i][k]+d[k][j]: 
+          return False, (i,k,j)
 
- `si d[i][k]+d[k][j] <= d[i][j] and k!=i!=j: M[i][j] = 0 `
+  return True, Null
+
+f solve(M):
+  es_fw, data = is_FW(M)  
+
+  si no es_fw:
+    return data
+
+  M' = copia de M
+
+  for k in range 1...n:
+    for i in range 1...n:
+      for j in range 1...n:
+        si M[i][j] ≥ M[i][k]+d[k][j] and k!=i!=j:
+          M'[i][j] = inf
+          M'[j][i] = inf
+
+  return M'
+```
