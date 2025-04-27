@@ -31,6 +31,6 @@ Correctitud del algoritmo:
 
 `M = FW(G)` $M$ es una matriz _Floyd-Warshall_ de $G$.
 
-Luego vemos cada arista con $v,w in D$, y $forall i in V, v->...->i->...->w$ es recorrido mínimo, por _Floyd-Warshall_, sabemos que cada $v->i$ es el mínimo recorrido de $v$ hasta $i$, análogo para $i->w$, entonces es suficiente con ver que el camino $v->w$ es igual a cada camino que pasa por cada otro nodo $i$.
+Luego vemos cada arista con $v,w in D$, y $forall i in V, v->...->i->...->w$ es recorrido mínimo, por _Floyd-Warshall_, sabemos que cada $v->i$ es el mínimo recorrido de $v$ hasta $i$, análogo para $i->w$, entonces es suficiente con ver que el camino $v->w$ es igual a cada camino que pasa por cada otro nodo $i in D$.
 
 Si cada nodo _Floyd-Warshall_-óptimo está en $I$, luego $I=V(G)$ y por lo tanto, $D$ es geodésico.
