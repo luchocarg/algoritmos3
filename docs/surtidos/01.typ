@@ -22,7 +22,7 @@ Luego $f(i',j')$ computa el camino mínimo desde $(1,1)$ hasta $(i',j')$
 
 Queremos ver que $f(i,j)$ computa el camino mínimo desde $(1,1)$ hasta $(i,j)$
 
-- *Si venimos desde la derecha*
+- *Si venimos desde la izquierda*
 
 Por *HI* $f(i-1,j)$ es el camino mínimo desde $(1,1)$ hasta $(i-1,j)$
 
