@@ -26,7 +26,7 @@ Queremos ver que $f(i,j)$ computa el camino mínimo desde $(1,1)$ hasta $(i,j)$
 
 Por *HI* $f(i-1,j)$ es el camino mínimo desde $(1,1)$ hasta $(i-1,j)$
 
-Luego, $A[i][j] + f(i-1,j)$ es un candidato a camino mínimo hasta (i,j)
+Luego, $A[i][j] + f(i-1,j)$ es un candidato a camino mínimo hasta $(i,j)$
 
 
 
