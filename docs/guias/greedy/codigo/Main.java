@@ -21,5 +21,8 @@ public class Main {
 
         int sumag = SumaGolosa.sg(new ArrayList<>(Arrays.asList(1,2,5)));
         System.out.println("SumaGolosa {1,2,5}: " + sumag);
+
+        List<Integer> Ruta = RutaEficiente.rutaEficiente(new ArrayList<>(Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7)), 1);
+        System.out.println("RutaEficiente: " + Ruta);
     }
 }
