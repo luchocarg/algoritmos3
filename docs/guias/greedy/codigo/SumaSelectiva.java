@@ -1,5 +1,4 @@
 import java.util.List;
-import java.util.Arrays;
 import java.util.PriorityQueue;
 
 public class SumaSelectiva {
@@ -13,7 +12,6 @@ public class SumaSelectiva {
     }
 
     public static int ssnlogk(List<Integer> X, int k) {
-        int n = X.size();
         PriorityQueue<Integer> heap = new PriorityQueue<>();
 
         for (int x : X) { //O(n)

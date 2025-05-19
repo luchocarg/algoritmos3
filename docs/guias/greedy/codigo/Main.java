@@ -24,5 +24,8 @@ public class Main {
 
         List<Integer> Ruta = RutaEficiente.rutaEficiente(new ArrayList<>(Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7)), 1);
         System.out.println("RutaEficiente: " + Ruta);
+
+        int[] maxmex = MaxMex.maxMex(new int[]{3,4,5,7,33,0,1});
+        System.out.println("MaxMax: " + java.util.Arrays.toString(maxmex));
     }
 }
