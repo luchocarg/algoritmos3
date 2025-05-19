@@ -259,51 +259,63 @@ class="math inline">\(k\)</span>-ésimo paso, nuestra solución <span
 class="math inline">\(G\)</span> toma los elementos minimos <span
 class="math inline">\(x,y \in S\)</span>, hacemos:</p>
 <p><span class="math display">\[S - \left\{ x,y \right\} \land_{L}S \cup
-(x + y)\text{  y  }G_{k} = x + y + \sum_{i &lt; k}G_{i}\]</span></p>
+(x + y)\text{  y  }G_{k} = x + y + G_{k - 1}\]</span></p>
 <hr />
 <p><img src="image-3.png" /></p>
-<p><strong>Invariante:</strong> en la <span
-class="math inline">\(k\)</span>-ésima iteración, <span
-class="math inline">\(x,y \in S_{k}\)</span> son reemplazados por <span
-class="math inline">\(x + y\)</span> y la suma acumulada es:</p>
-<p><span class="math display">\[G_{k} = x + y + \sum_{i &lt;
-k}G_{i}\]</span></p>
-<p>Y sea <span class="math inline">\(O\)</span> una solución óptima
-cualquiera.</p>
-<p><strong>Por inducción fuerte sobre la cantidad de combinaciones
-parciales:</strong></p>
-<p><strong>Caso base <span class="math inline">\(k =
-1\)</span></strong></p>
-<p>Tenemos solo 2 elementos, por ende son los mínimos, y la suma
-acumulada es <span class="math inline">\(x + y\)</span>. Trivialmente
-<span class="math inline">\(G = O\)</span></p>
-<p><strong>Paso recursivo <span class="math inline">\(k - 1 \Rightarrow
-k\)</span></strong></p>
-<p><strong>H.I:</strong> Suponemos que <span
-class="math inline">\(\forall k - 1 \geq i::G_{i}\)</span> son
-soluciones óptimas, con <span class="math inline">\(p &lt; n\)</span>
-elementos en <span class="math inline">\(S_{k}\)</span></p>
-<p>Queremos ver que si intercambiamos <span
-class="math inline">\(o_{k}\)</span> por <span
-class="math inline">\(g_{k}\)</span> en <span
-class="math inline">\(O\)</span>, sigue siendo óptima.</p>
-<p>Recordemos:</p>
-<p><span class="math display">\[G_{k} = x + y + \sum_{i &lt;
-k}G_{i},\text{ con }x,y\text{ los minimos de }S_{k}\]</span></p>
-<p>y por <strong>H.I.</strong> <span class="math inline">\(G\)</span> es
-tan buena como <span class="math inline">\(O\)</span> hasta el <span
-class="math inline">\(k - 1\)</span>-ésimo paso, por lo tanto en el paso
-<span class="math inline">\(k\)</span> tenemos:</p>
-<p><span class="math display">\[x + y + \sum_{i &lt; k}G_{i} \leq v + w
-+ \sum_{i &lt; k}G_{i}\]</span> donde <span
-class="math inline">\(O\)</span> toma <span class="math inline">\(v,w
-\in S_{k}^{O}\)</span> y <span class="math inline">\(G\)</span> toma
-<span class="math inline">\(x,y \in S_{k}^{G}\)</span></p>
-<p>Esto se reduce a <span class="math inline">\(x + y \leq v +
-w\)</span>, entonces <span class="math inline">\(G_{k}\)</span> es al
-menos tan buena como <span class="math inline">\(O_{k}\)</span> <span
-class="math inline">\(\Longrightarrow\)</span> <span
-class="math inline">\(G\)</span> es óptima.</p>
+<h2>Precondiciones:</h2>
+<p><span class="math inline">\(S = \left\{ s_{1},\ldots,s_{n}
+\right\}\)</span> el multiconjunto de entrada, <span
+class="math inline">\(s_{i} \in {\mathbb{N}}\)</span></p>
+<p><span class="math inline">\(S_{k} = S_{k - 1} - \left\{ x,y \right\}
+\cup \left\{ (x + y) \right\}\)</span>, con <span
+class="math inline">\(x,y\text{ los minimos } \in S_{k - 1}\)</span> (o
+sea, los elementos que podemos usar en la <span
+class="math inline">\(k\)</span>-ésima iteración).</p>
+<p><span class="math inline">\(G\)</span> es nuestra solución greedy</p>
+<p>El costo greedy <span class="math inline">\(C\)</span> hasta el paso
+<span class="math inline">\(k\)</span>: <span
+class="math inline">\(C_{k} = x + y + C_{k - 1}\)</span>, con <span
+class="math inline">\(x,y \in S_{k}\)</span>, con <span
+class="math inline">\(C_{0} = C_{1} = 0\)</span></p>
+<p><span class="math inline">\(O\)</span> una solución óptima
+cualquiera</p>
+<h2>Usaremos inducción fuerte sobre <span
+class="math inline">\(k\)</span>:</h2>
+<h3>Caso base <span class="math inline">\(k = 2\)</span>:</h3>
+<p>Luego <span class="math inline">\(S_{2} = \left\{ x,y \right\}
+\Rightarrow C_{2} = x + y + C_{1} = x + y\)</span> hay una sola suma
+válida y trivialmente es igual a la óptima <span
+class="math inline">\(O\)</span>.</p>
+<h3>Paso recursivo <span class="math inline">\(k &gt; 2\)</span>:</h3>
+<p><strong>H.I.:</strong> <span class="math inline">\(\forall j &lt;
+k::C_{j}\)</span> es el costo mínimo hasta el <span
+class="math inline">\(j\)</span>-ésimo paso.</p>
+<p><span class="math inline">\(G_{k}\)</span> toma los mínimos <span
+class="math inline">\(x,y \in S_{k - 1}\)</span> tal que <span
+class="math inline">\(C_{k} = x + y + C_{k - 1}\)</span></p>
+<p><strong>Caso 1:</strong> Si <span
+class="math inline">\(O_{k}\)</span> toma <span
+class="math inline">\(x,y\)</span> y por HI <span
+class="math inline">\(C_{k - 1}\)</span> es óptimo, luego <span
+class="math inline">\(C_{k}\)</span> es igual de óptimo que <span
+class="math inline">\(O_{k}\)</span></p>
+<p><strong>Caso 2:</strong> Si <span
+class="math inline">\(O_{k}\)</span> toma <span
+class="math inline">\(v,w \in S_{k}\)</span> con <span
+class="math inline">\(v + w \neq x + y\)</span>, dado que <span
+class="math inline">\(x,y\)</span> son mínimos en <span
+class="math inline">\(S_{k}\)</span>, entonces sabemos que <span
+class="math inline">\(x + y \leq v + w\)</span>, luego:</p>
+<p>Si en lugar de tomar <span class="math inline">\(v + w\)</span>
+tomase <span class="math inline">\(x + y\)</span>, entonces el costo
+<span class="math inline">\(C&#39;_{k}\)</span> de <span
+class="math inline">\(O_{k}\)</span> sería</p>
+<p><span class="math display">\[C&#39;_{k} = x + y + C&#39;_{k - 1} \leq
+v + w + C&#39;_{k - 1}\]</span></p>
+<p>Por lo que el costo de <span
+class="math inline">\(C&#39;_{k}\)</span> es óptimo y <span
+class="math inline">\(v \vee w\)</span> quedan disponibles para elegirse
+posteriormente.</p>
 <hr />
 <p><img src="image-4.png" /></p>
 <div class="sourceCode" id="cb2"><pre

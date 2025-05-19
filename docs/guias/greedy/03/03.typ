@@ -23,39 +23,44 @@ SumaGolosa(S):
 
 *Invariante:* En el $k$-ésimo paso, nuestra solución $G$ toma los elementos minimos $x,y in S$, hacemos:
 
-$ S-{x,y} and_L S union (x+y) " y " G_k = x+y +  sum_(i<k) G_i $
+$ S-{x,y} and_L S union (x+y) " y " G_k = x+y + G_(k-1)$
 
 #line(length: 100%)
 #image("image-3.png")
 
-*Invariante:* en la $k$-ésima iteración, $x,y in S_k$ son reemplazados por $x+y$ y la suma acumulada es:
+== Precondiciones:
 
-$ G_k = x+y+ sum_(i<k) G_i $
+$S={s_1,...,s_n}$ el multiconjunto de entrada, $s_i in NN$
 
-Y sea $O$ una solución óptima cualquiera.
+$S_k = S_(k-1) - {x,y} union {(x+y)}$, con $x,y "los minimos" in S_(k-1)$ (o sea, los elementos que podemos usar en la $k$-ésima iteración).
 
-*Por inducción fuerte sobre la cantidad de combinaciones parciales:*
+$G$ es nuestra solución greedy
 
-*Caso base $k = 1$*
+El costo greedy $C$ hasta el paso $k$: $C_k = x+y+C_(k-1)$, con $x,y in S_k$, con $C_0 = C_1 = 0$
 
-Tenemos solo 2 elementos, por ende son los mínimos, y la suma acumulada es $x+y$. Trivialmente $G=O$
+$O$ una solución óptima cualquiera
 
-*Paso recursivo $k-1 => k$*
+== Usaremos inducción fuerte sobre $k$:
 
-*H.I:* Suponemos que $forall k-1>=i:: G_i$ son soluciones óptimas, con $p<n$ elementos en $S_k$
+=== Caso base $k=2$:
 
-Queremos ver que si intercambiamos $o_k$ por $g_k$ en $O$, sigue siendo óptima.
+Luego $S_2 = {x,y} => C_2 = x+y+C_1 = x+y$ hay una sola suma válida y trivialmente es igual a la óptima $O$.
 
-Recordemos:
+=== Paso recursivo $k>2$:
 
-$ G_k = x+y +  sum_(i<k) G_i , "con" x,y "los minimos de" S_k $
+*H.I.:* $forall j<k::C_j$ es el costo mínimo hasta el $j$-ésimo paso.
 
-y por *H.I.* $G$ es tan buena como $O$ hasta el $k-1$-ésimo paso, por lo tanto en el paso $k$ tenemos:
+$G_k$ toma los mínimos $x,y in S_(k-1)$ tal que $C_k = x+y+C_(k-1)$
 
-$ x+y+sum_(i<k) G_i <= v+w+sum_(i<k) G_i $ donde $O$ toma $v,w in S_k^O$ y $G$ toma $x,y in S_k^G$
+*Caso 1:* Si $O_k$ toma $x,y$ y por HI $C_(k-1)$ es óptimo, luego $C_(k)$ es igual de óptimo que $O_k$
 
-Esto se reduce a $x+y<=v+w$, entonces $G_k$ es al menos tan buena como $O_k$
-$==>$ $G$ es óptima.
+*Caso 2:* Si $O_k$ toma $v,w in S_k$ con $v+w != x+y$, dado que $x,y$ son mínimos en $S_k$, entonces sabemos que $x+y<=v+w$, luego:
+
+Si en lugar de tomar $v+w$ tomase $x+y$, entonces el costo $C'_k$ de $O_k$ sería 
+
+$ C'_k = x+y+C'_(k-1)<=v+w+C'_(k-1) $
+
+Por lo que el costo de $C'_k$ es óptimo y $v or w$ quedan disponibles para elegirse posteriormente.
 
 
 #line(length: 100%)
