@@ -1,7 +1,7 @@
 import java.util.List;
 
 public class ParejasDeBaile {
-    public static int ParejasDeBaile(List<Integer> S, List<Integer> R) {
+    public static int parejasDeBaile(List<Integer> S, List<Integer> R) {
         int n = S.size();
         int res = 0;
 

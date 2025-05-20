@@ -8,8 +8,8 @@ public class Main {
         List<Integer> l3 = List.of(1,1,1,1,1);
         List<Integer> l4 = List.of(1,2,3);
 
-        int parejas1 = ParejasDeBaile.ParejasDeBaile(l1, l2);
-        int parejas2 = ParejasDeBaile.ParejasDeBaile(l3, l4);
+        int parejas1 = ParejasDeBaile.parejasDeBaile(l1, l2);
+        int parejas2 = ParejasDeBaile.parejasDeBaile(l3, l4);
 
         System.out.println("Parejas ejemplo 1: " + parejas1);
         System.out.println("Parejas ejemplo 2: " + parejas2);
