@@ -211,7 +211,8 @@ de cada nodo <span class="math inline">\(w\)</span>.</p>
 <p><code>dist[u]=dist[w]+1</code> nos asegura que es <span
 class="math inline">\(v\)</span>-geodésico</p>
 <p>Dado que cada nodo tiene <strong>exactamente un padre</strong>, es
-árbol.</p>
+árbol. (no es exactamente eso ya que no es dirigido, pero podríamos
+decir un “padre geodésico”)</p>
 <p>Como solo guardamos las aristas de peso mínimo con
 <code>minp[w], padre[w]</code>, es mínimo.</p>
 <p>Por último solo construimos el árbol uniendo cada
