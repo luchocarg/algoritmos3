@@ -166,8 +166,57 @@
       vertical-align: middle;
     }
   </style>
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
 </head>
 <body>
+<p><img src="image.png" /></p>
+<p><span class="math inline">\(G = (V,E)\)</span></p>
+<p>Suponemos que si es ponderado existe una función <span
+class="math inline">\(C\)</span> tal que <span
+class="math inline">\(C(v,w) \rightarrow n,n \in {\mathbb{N}},v,w \in
+V(G)\)</span></p>
+<h2>Algoritmo</h2>
+<pre><code>Algoritmo(G,v,C):
+  dist &lt;- BFS(G,v) tal que devuelve un vector de distancias de v a todos
 
+  minp &lt;- array todo en inf de tamaño n
+  padre &lt;- array todo en -1 de tamaño n
+
+  Para cada nodo u:
+    Para cada nodo w en ady(u):
+      Si dist[u]=dist[w]+1:
+        Si C(u,w) &lt; minp[w]:
+          padre[w] = u
+          minp[w] = C(u,w)
+
+  A &lt;- vector vacio usado como lista de aristas
+
+  Para cada u: 1...n:
+    Si u!=v y padre[u] != Nil:
+      A = A ∪ (padre[u],u)
+
+  Return A
+</code></pre>
+<h2>Correctitud</h2>
+<p>BFS puede devolver un vector <code>dist</code> de las distancias de
+la raiz a cada nodo, fué probado en la teórica.</p>
+<p>Luego nos fijamos para cada arista <code>u,w</code> <span
+class="math inline">\(\in V(G)\)</span> si
+<code>dist[u]=dist[w]+1</code> tal que nos asegure que sea <span
+class="math inline">\(v\)</span>-geodésico, y si lo es, al final del
+loop tendremos que <code>minp[w]</code> es el peso mínimo y el indicente
+de cada nodo <span class="math inline">\(w\)</span>.</p>
+<p><code>dist[u]=dist[w]+1</code> nos asegura que es <span
+class="math inline">\(v\)</span>-geodésico</p>
+<p>Dado que cada nodo tiene <strong>exactamente un padre</strong>, es
+árbol.</p>
+<p>Como solo guardamos las aristas de peso mínimo con
+<code>minp[w], padre[w]</code>, es mínimo.</p>
+<p>Por último solo construimos el árbol uniendo cada
+<code>padre[u]</code>, <code>u</code> con <span class="math inline">\(u
+\in V\)</span> en una lista de aristas o cualquier representación válida
+de un grafo, y este será nuestro resultado.</p>
 </body>
 </html>
