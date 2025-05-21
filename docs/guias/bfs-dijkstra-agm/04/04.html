@@ -166,8 +166,42 @@
       vertical-align: middle;
     }
   </style>
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
 </head>
 <body>
-
+<p><img src="image-1.png" /></p>
+<p>Los nodos serán <span class="math inline">\(\left( x_{i},y_{i},v_{i}
+\right)\)</span> tal que <span class="math inline">\(x,y\)</span> es la
+posición en la grilla, <span class="math inline">\(v_{i} \in \lbrack
+0,k),k \in {\mathbb{N}}\)</span> es el valor actual.</p>
+<p>Suponiendo que <span class="math inline">\(z_{i,j}\)</span> es el
+valor asociado a su respectiva posición <span
+class="math inline">\(\left( x_{i},y_{j} \right)\)</span> en la
+grilla.</p>
+<p>Las aristas son no pesadas, con nodos <span
+class="math inline">\(\left( x_{i},y_{i},v_{i} \right)\)</span> hacia
+<span class="math inline">\(\left( x_{i + 1},y_{i},\left( v_{i} + z
+\right)\operatorname{mod}k \right)\)</span> y <span
+class="math inline">\(\left( x_{i},y_{i + 1},\left( v_{i} + z
+\right)\operatorname{mod}k \right)\)</span> con <span
+class="math inline">\(x \leq n,y \leq m\)</span> (si se va de rango no
+hay arista)</p>
+<p>Para la complejidad, es la misma que en el primer taller, tenemos
+<span class="math inline">\(2mn - m - n\)</span> chances de ir vertical
+u horizontal, y <span class="math inline">\(nm\)</span> casillas en
+total, por lo que esto es <span class="math inline">\(O(nm)\)</span>.
+Nosotros le agregamos además un parámetro <span
+class="math inline">\(k\)</span> que en el peor caso nos suma <span
+class="math inline">\(k\)</span> nodos por cada <span
+class="math inline">\(x,y\)</span>, por lo que es <span
+class="math inline">\(O(knm)\)</span>.</p>
+<p>El problema se resuelve haciendo BFS desde <span
+class="math inline">\(x_{1},y_{1}\)</span>, devolviendo un vector de
+padres. Luego se itera sobre el vector de padres buscando uno con valor
+congruente a 0 módulo <span class="math inline">\(k\)</span>, y desde
+ese reconstruimos hasta <span class="math inline">\(v\)</span> usando el
+vector de padres.</p>
 </body>
 </html>
