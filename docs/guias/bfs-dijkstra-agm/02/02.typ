@@ -37,7 +37,7 @@ Luego nos fijamos para cada arista `u,w` $in V(G)$ si `dist[u]=dist[w]+1` tal qu
 
 `dist[u]=dist[w]+1` nos asegura que es $v$-geodésico 
 
-Dado que cada nodo tiene *exactamente un padre*, es árbol.
+Dado que cada nodo tiene *exactamente un padre*, es árbol.  (no es exactamente eso ya que no es dirigido, pero podríamos decir un "padre geodésico")
 
 Como solo guardamos las aristas de peso mínimo con `minp[w], padre[w]`, es mínimo.
 
