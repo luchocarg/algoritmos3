@@ -166,8 +166,64 @@
       vertical-align: middle;
     }
   </style>
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
 </head>
 <body>
+<p><img src="image.png" /></p>
+<hr />
+<p><img src="image-1.png" /></p>
+<p><strong>Teorema</strong> <span class="math inline">\(v \rightarrow
+w\)</span> es <em>st</em>-eficiente <span
+class="math inline">\(\Longleftrightarrow d(s,v) + c(v \rightarrow w) +
+d(w,t) = d(s,t)\)</span></p>
+<p><span class="math inline">\(( \Longrightarrow )\)</span></p>
+<p>Hipotesis: Sabemos que <span class="math inline">\(v \rightarrow
+w\)</span> existe en algún camino mínimo de <em>s</em> a <em>t</em> con
+<span class="math inline">\(d(s,t)\)</span></p>
+<p>Y por propiedad del camino más corto sabemos que <span
+class="math inline">\(d(s,v) + d(v,w) + d(w,t)\)</span>, y sabemos que
+<span class="math inline">\(v \rightarrow w\)</span> está en un camino
+mínimo de <em>s</em> a <em>t</em> por hipótesis, por lo que <span
+class="math inline">\(d(v,w) = c(v \rightarrow w)\)</span> tal que</p>
+<p><span class="math inline">\(d(s,v) + c(v \rightarrow w) + d(w,t) =
+d(s,v) + d(v,w) + d(w,t) = d(s,t)\)</span></p>
+<p><span class="math inline">\(( \Longleftarrow )\)</span></p>
+<p>Hipotesis: <span class="math inline">\(d(s,v) + c(v \rightarrow w) +
+d(w,t) = d(s,t)\)</span></p>
+<p>Si <span class="math inline">\(d(s,v) + c(v \rightarrow w) + d(w,t) =
+d(s,t)\)</span> entonces <span class="math inline">\(v \rightarrow
+w\)</span> existe en un camino mínimo de <em>s</em> a <em>t</em>, por lo
+que es <em>st</em>-eficiente.</p>
+<hr />
+<p><img src="image-2.png" /></p>
+<pre><code>Asumo G como lista de adyacencia.
 
+Algoritmo(G):
+  ds &lt;- Dijkstra(G,s) que devuelve los caminos minimos desde s a todos
+
+  G&#39; &lt;- G con las aristas invertidas
+  dt &lt;- Dijkstra(G&#39;,t) que devuelve los caminos minimos desde t a todos
+
+  Gout &lt;- conjunto vacio 
+
+  para cada v en G:
+    para cada w en G[v]:
+      si ds(v) + c(v-&gt;w) + dt(w) != ds(t):
+        agrego (v,w) a Gout
+
+  res &lt;- Dijkstra Gout
+
+  si res es vacio:
+    return ⊥
+  sino:
+    return res
+</code></pre>
+<p>La idea del algoritmo es ver que hay camino tal que no hay arista
+<span class="math inline">\(c(v \rightarrow w) = d(v,w)\)</span> y
+necesariamente haya un camino <span class="math inline">\(P = v\ldots
+w\)</span> diferente a <span class="math inline">\(v \rightarrow
+w\)</span> que sea mínimo.</p>
 </body>
 </html>
