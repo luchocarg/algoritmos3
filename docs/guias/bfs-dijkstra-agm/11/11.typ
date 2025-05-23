@@ -32,6 +32,6 @@ $ b^(delta(s,t)) $
 La equivalencia de caminos mínimos está justificada en "Cosas útiles"
 
 La solución es correcta porque 
- $ e^log(product_(a in A) a) = product_(a in A) a $ done en nuestro caso, $a = c(v->w) "con" v->w$ en un camino $A=s->...->t$. 
+ $ b^(log_b (product_(a in A) a)) = product_(a in A) a $ done en nuestro caso, $a = c(v->w) "con" v->w$ en un camino $A=s->...->t$. 
  
  En otras palabras, nos devuelve $(s,v_1)times(v_1,v_2)times... times(v_k,t)$, donde $s,v_1,v_2...v_k,t$ es el camino que minimiza la suma de los logaritmos del peso de cada arista, que es equivalente al logaritmo del mínimo producto, que es lo que queríamos buscar.
