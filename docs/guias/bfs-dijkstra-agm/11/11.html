@@ -166,8 +166,58 @@
       vertical-align: middle;
     }
   </style>
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
 </head>
 <body>
-
+<p><img src="image.png" /></p>
+<h2>Cosas útiles</h2>
+<p>Lo que queremos minimizar es para cada camino <span
+class="math inline">\(v_{1.}..v_{k}\)</span></p>
+<p><span class="math display">\[\prod_{i = 1}^{k - 1}c\left( v_{i}
+\rightarrow v_{i + 1} \right)\]</span></p>
+<p>Y sabemos que <span class="math inline">\(\log(x \cdot y) = \log x +
+\log y\)</span>,</p>
+<p>como el codominio es <span class="math inline">\({\mathbb{R}}_{&gt;
+1}\)</span> entonces <span class="math inline">\(x &lt; y
+\Longleftrightarrow \log x &lt; \log y\)</span></p>
+<p>Por lo que para todo par de caminos <span class="math inline">\(A,B
+\in G\)</span> vale que:</p>
+<p><span class="math display">\[\log(\prod_{a \in A}a) = \sum_{a \in
+A}\log a\]</span></p>
+<p><span class="math display">\[\prod_{a \in A}a &lt; \prod_{b \in B}b
+\Longleftrightarrow \sum_{a \in A}\log a &lt; \sum_{b \in B}\log
+b\]</span></p>
+<h2>Algoritmo </h2>
+<p>Armamos <span class="math inline">\(D&#39;\)</span> tal que para cada
+<span class="math inline">\(e \in E(D)\)</span> corresponde un <span
+class="math inline">\(e&#39; = e,e&#39; \in E(D&#39;)\)</span>, y <span
+class="math inline">\(c(e&#39;) = \log_{b}c(e)\)</span>, con <span
+class="math inline">\(b &gt; 1\)</span> cualquiera.</p>
+<p>Luego podemos usar Dijkstra(<span
+class="math inline">\(D&#39;,s\)</span>) <span
+class="math inline">\(\rightarrow \delta\)</span> (vector de distancias)
+para cualquier nodo <span class="math inline">\(s \in V(D)\)</span> y
+“recuperar” el peso multiplicativo de <span
+class="math inline">\(s\)</span> a cualquier <span
+class="math inline">\(t \in V(D)\)</span> haciendo</p>
+<p><span class="math display">\[b^{\delta(s,t)}\]</span></p>
+<h2>Correctitud</h2>
+<p>La equivalencia de caminos mínimos está justificada en “Cosas
+útiles”</p>
+<p>La solución es correcta porque <span
+class="math display">\[e^{\log(\prod_{a \in A}a)} = \prod_{a \in
+A}a\]</span> done en nuestro caso, <span class="math inline">\(a = c(v
+\rightarrow w)\text{ con }v \rightarrow w\)</span> en un camino <span
+class="math inline">\(A = s \rightarrow \ldots \rightarrow
+t\)</span>.</p>
+<p>En otras palabras, nos devuelve <span class="math inline">\(\left(
+s,v_{1} \right) \times (v_{1},v_{2}) \times \ldots \times
+(v_{k},t)\)</span>, donde <span
+class="math inline">\(s,v_{1},v_{2.}..v_{k},t\)</span> es el camino que
+minimiza la suma de los logaritmos del peso de cada arista, que es
+equivalente al logaritmo del mínimo producto, que es lo que queríamos
+buscar.</p>
 </body>
 </html>
