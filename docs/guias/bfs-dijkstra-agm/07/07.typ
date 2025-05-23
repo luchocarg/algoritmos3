@@ -4,9 +4,7 @@
 
 ```
 Algoritmo(G,c,s,t)
-
   ds <- Dijkstra(G,s)
-
   G' <- G con las aristas invertidas
   dt <- Dijkstra(G,t)
 
@@ -51,3 +49,5 @@ Si $v->w$ cumple `ds[v] + costo(v->w) + dt[w] ≤ c` entonces existe camino $P= 
 -  `si costo(v->w) > peso` entonces $v->w$ es la arista de peso máximo, por lo que actualizamos `peso = costo(v->w)` `res = v->w`, luego finaliza la iteración se mantiene el invariante.
 
 Caso contrario, no se actualizan `peso` ni `res`, se mantiene el invariante.
+
+Como el invariante se mantiene en todas las iteraciones, al finalizar el bucle, `res` será la arista de peso máximo tal que existe en un recorrido de _s_ a _t_ cuyo peso es como mucho _c_, o bien (-1,-1) si no existe arista válida.

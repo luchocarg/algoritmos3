@@ -174,9 +174,7 @@
 <p><img src="image.png" /></p>
 <h2>Algoritmo</h2>
 <pre><code>Algoritmo(G,c,s,t)
-
   ds &lt;- Dijkstra(G,s)
-
   G&#39; &lt;- G con las aristas invertidas
   dt &lt;- Dijkstra(G,t)
 
@@ -206,7 +204,8 @@ costo de la arista válida con peso máximo <span class="math inline">\(v
 \rightarrow w\)</span> tal que
 <code>ds[v] + costo(v-&gt;w) + dt[w] ≤ c</code></p>
 <p>Probemos que vale por inducción.</p>
-<p><strong>Caso base</strong></p>
+<p><strong>Caso base <span class="math inline">\(k =
+0\)</span></strong></p>
 <p><code> res = (-1,-1), peso = -1</code>, asumimos que -1 no es un
 nodo, y que (-1,-1) representa que no hay solución. Como no hay pesos
 negativos, cualquier número negativo es menor que uno positivo.</p>
@@ -231,5 +230,9 @@ invariante.</p></li>
 </ul>
 <p>Caso contrario, no se actualizan <code>peso</code> ni
 <code>res</code>, se mantiene el invariante.</p>
+<p>Como el invariante se mantiene en todas las iteraciones, al finalizar
+el bucle, <code>res</code> será la arista de peso máximo tal que existe
+en un recorrido de <em>s</em> a <em>t</em> cuyo peso es como mucho
+<em>c</em>.</p>
 </body>
 </html>
