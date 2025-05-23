@@ -166,8 +166,73 @@
       vertical-align: middle;
     }
   </style>
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
 </head>
 <body>
+<p><img src="image.png" /></p>
+<h2>Algoritmo </h2>
+<pre><code>Algoritmo(G,E):
+  ds &lt;- Dijkstra(G,s) //O(E(G)+V log V)
+  G&#39; &lt;- G con las aristas invertidas
+  dt &lt;- Dijkstra(G&#39;,t) //O(E(G)+V log V)
 
+  res &lt;- conjunto vacio
+
+  Para cada (v-&gt;w) en E: //O(E)
+    Si ds[v]+costo(v-&gt;w)+dt[w] &lt; ds[t]:
+      res &lt;- res union v-&gt;w
+
+  return res
+
+Complejidad final: O(E + E(G) + V log V) 
+</code></pre>
+<h2>Correctitud</h2>
+<p>Defino <span class="math inline">\(P = \left\{ s\ldots t
+\right\}\)</span>, el camino de s hasta t en <span
+class="math inline">\(G\)</span></p>
+<p><code>ds</code> y <code>dt</code> por Dijkstra sabemos que son
+correctos y devuelven los caminos mínimos de <em>s</em> a todo
+<em>v</em> en <span class="math inline">\(V(G)\)</span>, y de <em>t</em>
+a todo nodo <em>v</em> en un camino <span class="math inline">\(v
+\rightarrow \ldots \rightarrow t\)</span> respectivamente.</p>
+<h3>Ciclo </h3>
+<p>Vemos para cada arista <span class="math inline">\(v \rightarrow w
+\in E \notin E(G)\)</span></p>
+<p><strong>Invariante de ciclo:</strong> <span
+class="math inline">\(d(s,v) + c(v \rightarrow w) + d(w,t) &lt;
+d(s,t)\underset{L}{\Longrightarrow}\text{ res } = \text{ res } \cup v
+\rightarrow w\)</span></p>
+<p>En palabras, si existe arista <span class="math inline">\(v
+\rightarrow w\)</span> que mejora el camino mínimo de <em>s</em> a
+<em>t</em> entonces la arista existe en el output <code>res</code>
+(además será <em>st</em>-eficiente).</p>
+<p><strong>Inducción en la cantidad de iteraciones <span
+class="math inline">\(k\)</span></strong></p>
+<p><strong>Caso base <span class="math inline">\(k =
+0\)</span>:</strong></p>
+<p><code>res</code> = <span class="math inline">\(\varnothing\)</span>,
+todavía no encontramos ninguna arista que mejore el camino <span
+class="math inline">\(s \rightarrow \ldots \rightarrow t\)</span> por lo
+que se preserva el invariante.</p>
+<p><strong>Paso inductivo<span class="math inline">\(k \Rightarrow k +
+1\)</span>:</strong></p>
+<p>En la k-ésima iteración, <code>res</code> representa el conjunto de
+todas las aristas de <span class="math inline">\(E\)</span> que mejoran
+<span class="math inline">\(P\)</span>.</p>
+<p>Queremos ver en la iteración k+1, la arista <span
+class="math inline">\(v \rightarrow w \in E\)</span>.</p>
+<p>Si <span class="math inline">\(d(s,v) + c(v \rightarrow w) + d(w,t)
+&lt; d(s,t)\)</span> entonces <span class="math inline">\(v \rightarrow
+w\)</span> mejora <span class="math inline">\(P\)</span>, por lo que
+agregamos <span class="math inline">\(v \rightarrow w\)</span> a
+<code>res</code>. Caso contrario, no agregamos nada a <code>res</code>.
+Vale el invariante.</p>
+<p>Esto vale porque por propiedad de camino más corto, <span
+class="math inline">\(d(s,v) + d(v,w) + d(w,t) = d(s,t)\)</span> en
+<span class="math inline">\(G\)</span>, y si mejora el camino entonces
+en particular <span class="math inline">\({c(v \rightarrow w)}_{G + e}
+&lt; {d(v,w)}_{G}\)</span></p>
 </body>
 </html>
