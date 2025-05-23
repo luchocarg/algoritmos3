@@ -217,10 +217,11 @@ válida de ese peso hasta la k-ésima iteración. <span
 class="math inline">\(v \rightarrow w\)</span> es la arista
 k+1-ésima</p>
 <p>Si <span class="math inline">\(v \rightarrow w\)</span> cumple
-<code>ds[v] + costo(v-&gt;w) + dt[w] ≤ c</code> entonces existe camino
-<span class="math inline">\(P = s\ldots vw\ldots t\)</span> tal que el
-peso de <span class="math inline">\(P\)</span> es menor o igual a <span
-class="math inline">\(c\)</span> tal que:</p>
+<code>ds[v] + costo(v-&gt;w) + dt[w] ≤ c</code> entonces existe
+recorrido <span class="math inline">\(P = s \rightarrow \ldots
+\rightarrow v \rightarrow w \rightarrow \ldots \rightarrow t\)</span>
+tal que el peso de <span class="math inline">\(P\)</span> es menor o
+igual a <span class="math inline">\(c\)</span>, luego:</p>
 <ul>
 <li><p><code>si costo(v-&gt;w) &gt; peso</code> entonces <span
 class="math inline">\(v \rightarrow w\)</span> es la arista de peso
@@ -233,6 +234,6 @@ invariante.</p></li>
 <p>Como el invariante se mantiene en todas las iteraciones, al finalizar
 el bucle, <code>res</code> será la arista de peso máximo tal que existe
 en un recorrido de <em>s</em> a <em>t</em> cuyo peso es como mucho
-<em>c</em>.</p>
+<em>c</em>, o bien (-1,-1) si no existe arista válida.</p>
 </body>
 </html>

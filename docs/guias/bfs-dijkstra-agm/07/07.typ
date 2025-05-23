@@ -45,7 +45,7 @@ Como todavía no encontramos una arista válida, el invariante vale.
 
 `peso` y `res` son el peso máximo y la arista válida de ese peso hasta la k-ésima iteración. $v->w$ es la arista k+1-ésima
 
-Si $v->w$ cumple `ds[v] + costo(v->w) + dt[w] ≤ c` entonces existe camino $P= s...v w...t$ tal que el peso de $P$ es menor o igual a $c$ tal que:
+Si $v->w$ cumple `ds[v] + costo(v->w) + dt[w] ≤ c` entonces existe recorrido $P= s->...->v->w->...->t$ tal que el peso de $P$ es menor o igual a $c$, luego:
 -  `si costo(v->w) > peso` entonces $v->w$ es la arista de peso máximo, por lo que actualizamos `peso = costo(v->w)` `res = v->w`, luego finaliza la iteración se mantiene el invariante.
 
 Caso contrario, no se actualizan `peso` ni `res`, se mantiene el invariante.
