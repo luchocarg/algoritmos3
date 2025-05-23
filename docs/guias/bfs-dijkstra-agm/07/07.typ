@@ -25,7 +25,7 @@ Algoritmo(G,c,s,t)
 
 `ds` Por Dijkstra tenemos que es un vector de caminos mínimos de _s_ a _v_ $forall v in V(G)$
 
-`dt` análogo al anterior pero de _t_ a cada nodo incidente.
+`dt` análogo al anterior pero de _t_ a cada nodo de un camino incidente a _t_.
 
 *Bucle*
 
