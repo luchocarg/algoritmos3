@@ -38,14 +38,14 @@ Entonces nos queda $O(n + k n^2 + m+n log n) in O(k n^2)$
 
 == Complejidad de la construcción del grafo:
 $ 
-sum_(i=1)^(n-1) sum_(j=i+1)^n O(k) + O(1) + O(1) = 
-sum_(i=1)^(n-1) sum_(j=i+1)^n O(k) = 
+sum_(i=1)^(n-1) sum_(j=i+1)^n O(k) + O(1) + O(1) = \
+sum_(i=1)^(n-1) sum_(j=i+1)^n O(k) = \
 O(k) times sum_(i=1)^(n-1) sum_(j=i+1)^n 1 = \
-O(k) times sum_(i=1)^(n-1) n-i = 
-O(k) times (sum_(i=1)^(n-1) n - sum_(i=1)^(n-1) i) = 
+O(k) times sum_(i=1)^(n-1) n-i = \
+O(k) times (sum_(i=1)^(n-1) n - sum_(i=1)^(n-1) i) = \ 
 O(k) times (n sum_(i=1)^(n-1) 1 - sum_(i=1)^(n-1) i) = \
-O(k) times (n(n-1) - sum_(i=1)^(n-1) i) = 
+O(k) times (n(n-1) - sum_(i=1)^(n-1) i) = \
 O(k) times (n(n-1) - n(n-1)/2) = \
-O(k) times (n(n-1)/2) = 
+O(k) times (n(n-1)/2) = \
 O(k) times (n^2-n)/2 in O(k.n^2)
 $

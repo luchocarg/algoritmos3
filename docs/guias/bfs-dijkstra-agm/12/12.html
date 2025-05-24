@@ -218,16 +218,18 @@ es la mejor opción, aunque no va al caso)</p>
 + n\log n \right) \in O\left( kn^{2} \right)\)</span></p>
 <h2>Complejidad de la construcción del grafo:</h2>
 <p><span class="math display">\[\begin{array}{r}
-\sum_{i = 1}^{n - 1}\sum_{j = i + 1}^{n}O(k) + O(1) + O(1) = \sum_{i =
-1}^{n - 1}\sum_{j = i + 1}^{n}O(k) = O(k) \times \sum_{i = 1}^{n -
-1}\sum_{j = i + 1}^{n}1 = \\
-O(k) \times \sum_{i = 1}^{n - 1}n - i = O(k) \times \left( \sum_{i =
-1}^{n - 1}n - \sum_{i = 1}^{n - 1}i \right) = O(k) \times \left(
-n\sum_{i = 1}^{n - 1}1 - \sum_{i = 1}^{n - 1}i \right) = \\
-O(k) \times \left( n(n - 1) - \sum_{i = 1}^{n - 1}i \right) = O(k)
-\times \left( n(n - 1) - \frac{n(n - 1)}{2} \right) = \\
-O(k) \times \left( \frac{n(n - 1)}{2} \right) = O(k) \times \frac{n^{2}
-- n}{2} \in O\left( k.n^{2} \right)
+\sum_{i = 1}^{n - 1}\sum_{j = i + 1}^{n}O(k) + O(1) + O(1) = \\
+\sum_{i = 1}^{n - 1}\sum_{j = i + 1}^{n}O(k) = \\
+O(k) \times \sum_{i = 1}^{n - 1}\sum_{j = i + 1}^{n}1 = \\
+O(k) \times \sum_{i = 1}^{n - 1}n - i = \\
+O(k) \times \left( \sum_{i = 1}^{n - 1}n - \sum_{i = 1}^{n - 1}i \right)
+= \\
+O(k) \times \left( n\sum_{i = 1}^{n - 1}1 - \sum_{i = 1}^{n - 1}i
+\right) = \\
+O(k) \times \left( n(n - 1) - \sum_{i = 1}^{n - 1}i \right) = \\
+O(k) \times \left( n(n - 1) - \frac{n(n - 1)}{2} \right) = \\
+O(k) \times \left( \frac{n(n - 1)}{2} \right) = \\
+O(k) \times \frac{n^{2} - n}{2} \in O\left( k.n^{2} \right)
 \end{array}\]</span></p>
 </body>
 </html>
