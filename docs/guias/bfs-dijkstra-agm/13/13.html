@@ -166,8 +166,75 @@
       vertical-align: middle;
     }
   </style>
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
 </head>
 <body>
+<p><img src="image.png" /> <img src="image-4.png" /></p>
+<hr />
+<p><img src="image-1.png" /></p>
+<pre><code>Algoritmo1(G):
+  Para cada arista e ∈ E(G): //Doy vuelta los pesos para buscar el AGMáx, O(m)
+    c(e) = -c(e)
 
+  AGM &lt;- Prim(G) //O(m+n log n)
+
+  //Recupero los pesos originales, es AGM, hay n-1 aristas, n nodos, O(n)
+  Para cada v en AGM:
+    Para cada w en AGM[v]:
+      c(v,w) = -c(v,w)
+
+  minimo = inf 
+  Para cada v en AGM:
+    Para cada w en AGM[v]:
+      si c(v,w) &lt; minimo:
+        minimo := c(v,w)
+
+  return minimo
+
+La complejidad final es O(n+m+n log n) ∈ O(m + n log n)
+</code></pre>
+<hr />
+<p><img src="image-2.png" /></p>
+<p><img src="image-3.png" /></p>
+<pre><code>Algoritmo2(G):
+  Para cada arista e ∈ E(G): //Doy vuelta los pesos para buscar el AGMáx, O(m)
+    c(e) = -c(e)
+
+  AGM &lt;- Prim(G) //O(m+n log n)
+
+  //Veo para toda arista del AGM, hay n-1 aristas, n nodos, O(n)
+  Para cada v en AGM:
+    Para cada w en AGM[v]:
+      c(v,w) = -c(v,w) //recupero el peso original
+
+  pesos_AGM = []
+
+  Para cada v en AGM:
+    Para cada w en AGM[v]:
+      pesos_AGM.agregar(c(v,w)) 
+  
+  sol &lt;- sort(pesos_AGM)
+
+  sol.agregar(inf)
+
+  return sol
+</code></pre>
+<p>Lo que habría que ver es lo siguiente, es bastante sencilla la
+inducción, pero como el enunciado no lo pide, no lo voy a probar.
+(<code>sol</code> es 0-indexed).</p>
+<p><span class="math display">\[\forall i,0 \leq i &lt;
+n\underset{L}{\rightarrow}a_{i} = \begin{cases}
+\text{ sol}\lbrack i\rbrack &amp; \text{si }i &lt; n - 1 \\
+\infty &amp; \text{si }i = n - 1
+\end{cases}\]</span></p>
+<p>Plantear:</p>
+<ul>
+<li><p>caso base <span class="math inline">\(k = 0\)</span></p></li>
+<li><p>caso inductivo <span class="math inline">\(1 \leq k &lt; n -
+1\)</span></p></li>
+<li><p>caso <span class="math inline">\(k = n - 1\)</span></p></li>
+</ul>
 </body>
 </html>
