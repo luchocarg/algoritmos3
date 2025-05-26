@@ -1,4 +1,4 @@
-= Apunte de árboles
+= Árboles
 
 == Definiciones generales
 
@@ -106,7 +106,7 @@ Sea $G=(V,E)$ un grafo con *pesos positivos* en las aristas.
 
 Dijkstra encuenta los caminos mínimos de un nodo raiz $v in V$ a todo nodo $w in V$
 
-$"dist"(v,w) = infinity <==>$ $v$ está en una componente conexa distinta a la de $w$.
+$"dist"(v,w) = infinity <==>$ $w$ es inalcanzable para $v$.
 
 === Input:
 - $G=(V,E)$ un grafo.
@@ -131,7 +131,8 @@ $"dist"(v,w) = infinity <==>$ $v$ está en una componente conexa distinta a la d
 - _st_-eficiencia:
 - - Dijkstra$(G,s) -> delta_s$
 - - Invertimos toda $(u,w) in E$ tal que quedan $(w,u) in E$
-- - Dijkstra$(G,t) -> delta_t$
+- - Dijkstra$(G,t) -> delta_t$ (esto nos da los caminos mínimos de todos a $t$)
+- - Re-invertimos las aristas para recuperar cada $(u,w) in E$
 - - Vale $delta(s,t) = delta(s,u) + c(u,w) + delta(w,t) $
 
 == Prim
