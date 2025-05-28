@@ -72,3 +72,15 @@ Si se ejecuta *E-K* sobre una red de flujos $G=(V,E)$ con un nodo fuente $s$ y u
 
 === Lema 2:
 El total de flujos aumentantes está acotada por $O(V E)$
+
+=== Nota
+E-K es $O(V E^2)$ (BFS con FF)
+
+== Matching bipartito
+
+=== Lema 3:
+
+Sea $G=(V,E)$ un grafo bipartito con $V = L union R$ y sea $G' = (V',E')$ es la red de flujos de $G$.
+
+Si $M$ es un matcheo en $G$, entonces existe un flujo $f$ en $G'$ tal que $|f| = |M|$. Intuitivamente, $f$ es un flujo en $G'$, entonces hay un matching $M$ en $G$ con cardinalidad $|M| = |f|$
+
