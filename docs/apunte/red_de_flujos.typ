@@ -223,4 +223,41 @@ Dado el grafo bipartito $G=(V_1 union V_2, E)$, definimos la red $M=(V',E')$:
 
 - $c(e) = 1, forall e in E'$.
 
+== Teorema 4.
 El cardinal del matching máximo de $G$ será igual al valor del flujo máximo en la red $M$
+
+== Redes con demandas:
+
+Sea un grafo $G=(V,E)$ donde sus nodos tienen demanda $d_v$ (consumo $>0$, producción $< 0$).
+
+Armamos la red modificada $D=(V',E')$:
+
+- Agregamos una _fuente_ $s$ y un _sumidero_ $t$ y todo nodo de $V$ a $V'$
+
+- Para $d_v > 0:$ agrego arista $(s->v)$ a $E'$ con $c(s->v) = d_v$
+
+- Para $d_v < 0:$ agrego arista $(v->t)$ a $E'$ con $c(v->t) = |d_v|$
+
+== Teorema 5.
+Una red con demandas es factible si el flujo máximo satura toda $(s->v) in E', (v->t) in E'$.
+
+== Lema 4.
+- $ bold("flujo factible existe") <==> sum_(v in V) d_v = 0 $
+
+== Flujos con capacidades en los nodos:
+
+Para un grafo $G=(V,E)$
+
+Si tenemos restricción de capacidad $c_v$ en algún nodo $v in V$, podemos modelar el problema de la siguiente manera:
+
+Armamos la red $M=(V',E')$ tal que:
+
+- Cada $v in V$ se divide en dos nodos, $v^+,v^- in V'$
+- Armamos $E'$ reemplazando cada $(u->v) in E$ por $(u^- -> v^+) in E'$ y $c(u^- -> v^+) = c(u->v)$
+- Agregamos para cada par $v^+, v^- in V'$ que se condice con $v in V$:
+- - $(v^+ -> v^-) in E'$
+- -  $c(v^+ -> v^-) = c_v$.
+
+Esquema intuitivo:
+
+$ bold("Flujo de entrada") --> v^+ overbrace(-->,#text(1.5em)[$:c_v$]) v^- --> bold("Flujo de salida") $
