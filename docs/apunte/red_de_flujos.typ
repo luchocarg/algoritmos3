@@ -185,6 +185,8 @@ Si los valores del flujo inicial y las capacidades de las aristas de la red son 
 
 = Edmond-Karp
 
+La implementación del paradigma planteado por Ford y Furkerson usa BFS en el algoritmo de camino de aumento para marcar los nodos. Su complejidad es $O(m^2n)$
+
 == Teorema 3.
 Dada una red $G=(V,E)$ con $n$ nodos y $m$ aristas, el algoritmo de E&K realiza a lo sumo $n m$ iteraciones.
 
@@ -192,3 +194,33 @@ Dada una red $G=(V,E)$ con $n$ nodos y $m$ aristas, el algoritmo de E&K realiza 
 
 Sea $f_i$ el flujo máximo de la iteración $i$ del algoritmo E&K. Entonces, para todo $v in V$, $d_R(G,f_i) (s,v) <= d_R(G,f_(i+1)) (s,v)$ para toda iteración $i$ del algoritmo.
 
+= Útiles + variantes del problema de flujo máximo 
+
+== Múltiples fuentes y sumideros:
+
+Para una red $G=(V,E)$
+
+Un problema de flujo máximo puede tener múltiples fuentes y sumideros. Ejemplo, tenemos $s_1,...,s_p$ nodos _fuente_ $t_1,...,t_q$ y nodos _sumidero_.
+
+Podemos plantear sumideros y arcos ficticios con capacidad infinita, o sea:
+
+$forall i:: 1<=i<=p ->_L (s,s_i) in E, c(s,s_i) = infinity$
+
+$forall i:: 1<=j<=q ->_L (t_j,t) in E, c(t_j,t) = infinity$
+
+Con $s$ el nuevo nodo _fuente_ y $t$ el nuevo nodo _sumidero_.
+
+La fuente ficticia s generará tanto flujo como requieran las fuentes $s_i$ y el
+sumidero ficticio t consumirá tanto flujo como lo hagan los sumideros $t_j$.
+
+== Matching máximo en grafos bipartitos:
+
+Dado el grafo bipartito $G=(V_1 union V_2, E)$, definimos la red $M=(V',E')$:
+
+- $V' = V_1 union V_2 union {s,t}$, con $s,t$ nodos ficticios representando la _fuente_ y el _sumidero_ de $M$.
+
+- $E' = {(u -> w), u in V_1, w in V_2, (u,w) in E} union {(s,u), u in V_1} union {(w,t), w in V_2}$
+
+- $c(e) = 1, forall e in E'$.
+
+El cardinal del matching máximo de $G$ será igual al valor del flujo máximo en la red $M$
