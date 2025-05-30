@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>01</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<p><img src="image.png" /></p>
+<p>Sea <span class="math inline">\(N = (V,E)\)</span> un flujo, dos
+nodos distinguidos <span class="math inline">\(s\)</span> fuente, <span
+class="math inline">\(t\)</span> sumidero, <span
+class="math inline">\(c\)</span> una función de capacidad.</p>
+<h2>a.</h2>
+<p>Queremos probar que <span class="math inline">\(\forall(u,v) \in
+E\underset{L}{\rightarrow}c(u,v) \equiv 0\left( \operatorname{mod}2
+\right) \Longrightarrow F_{\text{max }} \equiv 0\left(
+\operatorname{mod}2 \right)\)</span></p>
+<p>Sea <span class="math inline">\(S\)</span> un corte, <span
+class="math inline">\(T = V\backslash S\)</span></p>
+<p>Con <span class="math inline">\(ST = \left\{ (u,v) \in E~|~u \in S,v
+\in T \right\}\)</span></p>
+<p>Por definición, la capacidad de un corte <span
+class="math inline">\(S\)</span> es tal que <span
+class="math display">\[c(S) = \sum_{e \in ST}c(e)\]</span></p>
+<p>Y por hipótesis sabemos que <span class="math inline">\(\forall(u,v)
+\in E\underset{L}{\rightarrow}c(u,v) \equiv 0\left( \operatorname{mod}2
+\right)\)</span> por lo que para cualquier corte <span
+class="math inline">\(S\)</span>:</p>
+<p><span class="math display">\[c(S) = \sum_{(u,v) \in ST}c(u,v) \equiv
+0\left( \operatorname{mod}2 \right)\]</span></p>
+<p>En particular, un corte mínimo <span class="math inline">\(c(S&#39;)
+\equiv 0\left( \operatorname{mod}2 \right)\)</span></p>
+<p>Y por teorema de flujo máximo/ corte mínimo sabemos que el flujo
+máximo es igual al corte mínimo.</p>
+<p><span class="math inline">\(F_{\max} = c(S&#39;) \land c(S&#39;)
+\equiv 0\left( \operatorname{mod}2 \right) \Longrightarrow F_{\max}
+\equiv 0\left( \operatorname{mod}2 \right)\)</span></p>
+<p><span class="math inline">\(⬜\)</span></p>
+<h2>b.</h2>
+<p>Queremos probar que <span class="math inline">\(\forall(u,v) \in
+E\underset{L}{\rightarrow}c(u,v) \equiv 0\left( \operatorname{mod}2
+\right) \Longrightarrow \exists F_{\max}~|~e \equiv 0\left(
+\operatorname{mod}2 \right),\forall e \in E\)</span></p>
+<p>Usando el inciso (a) sabemos que <span
+class="math inline">\(\forall(u,v) \in E\underset{L}{\rightarrow}c(u,v)
+\equiv 0\left( \operatorname{mod}2 \right) \Longrightarrow F_{\text{max
+}} \equiv 0\left( \operatorname{mod}2 \right)\)</span></p>
+<p><span class="math inline">\(F_{\max} = \max\left\{ F~|~f\text{ es un
+flujo factible} \right\}\)</span>.</p>
+<p>Queda ver que <span class="math inline">\(\exists F_{\max} \equiv
+0\left( \operatorname{mod}2 \right)~|~\forall f(u,v) \equiv
+0\operatorname{mod}2,\forall(u,v) \in E\)</span></p>
+<p><strong>Veamoslo por inducción en las iteraciones de Ford
+Furkerson:</strong></p>
+<p><strong>Hipótesis 1</strong>: <span
+class="math inline">\(\forall(u,v) \in E\underset{L}{\rightarrow}c(u,v)
+\equiv 0\left( \operatorname{mod}2 \right)\)</span></p>
+<p><strong>Caso base</strong>:</p>
+<p><span class="math inline">\(\forall(u \rightarrow w) \in E:f(u
+\rightarrow w) = 0 \equiv 0\operatorname{mod}2\)</span></p>
+<p><strong>Paso inductivo</strong>:</p>
+<p><strong>HI</strong> En la <span
+class="math inline">\(k\)</span>-ésima iteración, <span
+class="math inline">\(f_{k}(v,w) \equiv
+0\operatorname{mod}2,\forall(v,w)\)</span></p>
+<p>Veamos la iteración <span class="math inline">\(k +
+1\)</span>-ésima</p>
+<p>En cada iteración, el algoritmo encuentra <span
+class="math inline">\(\Delta(P) = \min\limits_{e \in P}\left\{ \Delta(e)
+\right\}\)</span></p>
+<p><span class="math display">\[\Delta(v \rightarrow w) = \begin{cases}
+c(v \rightarrow w) - f(v \rightarrow w) &amp; \text{si }(v \rightarrow
+w) \in E \\
+f(v \rightarrow w) &amp; \text{si }(w \rightarrow v) \in E
+\end{cases}\]</span></p>
+<p>Por hipótesis 1 e hipótesis inductiva, <span
+class="math inline">\(c(v \rightarrow w) \equiv 0\operatorname{mod}2
+\land f(v \rightarrow w) \equiv 0\operatorname{mod}2\)</span></p>
+<p>Por lo que <span class="math inline">\(\Delta(P) \equiv
+0\operatorname{mod}2\)</span></p>
+<p>Y cada actualización de flujo cae en uno de estos 3 casos:</p>
+<ul>
+<li><p><span class="math inline">\(f_{k + 1}(v \rightarrow
+w)\underset{\text{HI }}{\equiv}0\operatorname{mod}2\)</span></p></li>
+<li><p><span class="math inline">\(f_{k + 1}(v \rightarrow w) +
+\Delta(P)\underset{\text{HI }}{\equiv}\Delta(P)\operatorname{mod}2
+\equiv 0\operatorname{mod}2\)</span></p></li>
+<li><p><span class="math inline">\(f_{k + 1}(v \rightarrow w) -
+\Delta(P)\underset{\text{HI }}{\equiv}\Delta(P)\operatorname{mod}2
+\equiv 0\operatorname{mod}2\)</span></p></li>
+</ul>
+<p>Como queriamos probar, el flujo de toda arista se mantiene impar.</p>
+<p><span class="math inline">\(\therefore\forall(u,v) \in E,f(u,v)
+\equiv 0\operatorname{mod}2\)</span> y en particular, <span
+class="math inline">\(F_{\max} = |f^{\ast}| \equiv
+0\operatorname{mod}2\)</span></p>
+<p><span class="math inline">\(⬜\)</span></p>
+<p><strong>Nota</strong>: esta demostración es mucho más sencilla
+trabajando sobre <span class="math inline">\({\mathbb{Z}}\text{ /
+}2{\mathbb{Z}}\)</span>.</p>
+<h2>c.</h2>
+<p>Contraejemplo:</p>
+<p><img src="image-1.png" style="height:16em" /></p>
+<p><span class="math inline">\(F_{\max} = 2\)</span></p>
+</body>
+</html>
