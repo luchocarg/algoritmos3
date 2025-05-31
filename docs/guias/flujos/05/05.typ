@@ -60,4 +60,4 @@ Por lo que tenemos exactamente $F_max$ caminos disjuntos.
 
 = d.
 
-Sea $N=(V,K)$ nuestra red, como todas las aristas tienen capacidad 1, tenemos a lo sumo $F_max$ caminos de aumento, y como BFS es $O(m)$ entonces tenemos que EK es $O(m F_max)$.
+Sea $N=(V,K)$ nuestra red, como todas las aristas tienen capacidad 1, tenemos a lo sumo $F_max$ aumentos, y como BFS es $O(m)$ entonces tenemos que EK es $O(m F_max)$.
