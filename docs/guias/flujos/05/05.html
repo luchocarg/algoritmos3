@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>05</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<p><img src="image-1.png" /></p>
+<h1>a.</h1>
+<p>Sea <span class="math inline">\(G = (V,E)\)</span></p>
+<p>Sea <span class="math inline">\(K\)</span> el conjunto de aristas que
+existen en algún camino dirigido de <span
+class="math inline">\(s\)</span> a <span
+class="math inline">\(t\)</span> en <span
+class="math inline">\(G\)</span>.</p>
+<p>Armamos nuestra red de flujos <span class="math inline">\(N =
+(V,K)\)</span></p>
+<p><span class="math inline">\(\forall(u \rightarrow v) \in K::c(u
+\rightarrow v) = 1\)</span></p>
+<p><span class="math inline">\(s\)</span> es <em>fuente</em>, <span
+class="math inline">\(t\)</span> es <em>sumidero</em></p>
+<h1>b.</h1>
+<p>Cada unidad de flujo es un camino disjunto de <span
+class="math inline">\(s\)</span> a <span
+class="math inline">\(t\)</span></p>
+<p>La restricción de capacidad <span class="math inline">\(1\)</span>
+nos limita a que cada arista pertenezca a lo sumo a un camino.</p>
+<p><span class="math inline">\(F_{\max}\)</span> es la cantidad de
+caminos disjuntos en <span class="math inline">\(N\)</span>.</p>
+<h1>c.</h1>
+<h2><span class="math inline">\(N\)</span> es una red válida.</h2>
+<p>Probemos que no hay ciclos ni aristas bidirecciones, por el
+absurdo.</p>
+<p>Supongamos que tenemos dos caminos arbitrarios <span
+class="math inline">\(P_{1}\)</span> y <span
+class="math inline">\(P_{2}\)</span></p>
+<p><span class="math display">\[P_{1} = s,\ldots
+v,\ldots,w,\ldots,t\]</span></p>
+<p><span class="math display">\[P_{2} = s,\ldots
+w,\ldots,v,\ldots,t\]</span></p>
+<p>O sea, <span class="math inline">\((v\ldots w) \in P_{1}\)</span> y
+<span class="math inline">\((w\ldots v) \in P_{2}\)</span></p>
+<p>Y sabemos que <span class="math inline">\(K = P_{1} \cup P_{2} \cup
+\ldots \cup P_{k}\)</span></p>
+<p>Por lo que si existe ciclo en <span class="math inline">\(K\)</span>
+<span class="math inline">\(v\ldots w\ldots v\)</span> lo cual no es
+óptimo, entonces uno de los 2 no es mínimo. Por lo tanto, no existen
+aristas bidireccionales en <span class="math inline">\(K\)</span>.</p>
+<p>Esto en particular significa que tampoco existe ciclo <span
+class="math inline">\(v \rightarrow w \rightarrow v\)</span>, por lo que
+si <span class="math inline">\((v \rightarrow w) \in K \Rightarrow (w
+\rightarrow v) \notin K\)</span>, por lo que no hay aristas
+bidireccionales.</p>
+<p>Por lo tanto, <span class="math inline">\(N = (V,K)\)</span> es una
+red válida.</p>
+<h2>El Modelo es correcto.</h2>
+<p>Máxima cantidad de caminos disjuntos <span
+class="math inline">\(\Longleftrightarrow\)</span> Flujo máximo</p>
+<h3>Máximo cantidad de caminos disjuntos <span
+class="math inline">\(\Longrightarrow\)</span> Flujo máximo</h3>
+<p>Si hay <span class="math inline">\(n\)</span> caminos disjuntos, como
+<span class="math inline">\(c(e) = 1,\forall e \in E\)</span> no
+podremos enviar más de <span class="math inline">\(n\)</span> unidades
+de flujo, ya que si pudiese mandar <span class="math inline">\(n +
+1\)</span>, entonces <span class="math inline">\(n\)</span> no era el
+máximo de caminos disjuntos.</p>
+<h3>Flujo máximo <span class="math inline">\(\Longrightarrow\)</span>
+Máximo cantidad de caminos disjuntos</h3>
+<p>Tenemos un flujo máximo <span class="math inline">\(F_{\max} \in
+{\mathbb{N}}_{0}\)</span>, y como todas las aristas tienen capacidad 1 o
+0:</p>
+<p>Por conservación de flujo no podemos tener más de una arista
+incidente que entregue flujo, ya que siempre sale exactamente <span
+class="math inline">\(1\)</span> unidad, por lo que cada camino es
+disjunto, y cada camino lleva exactamente una unidad de flujo desde
+<span class="math inline">\(s\)</span> hasta <span
+class="math inline">\(t\)</span>.</p>
+<p>Por lo que tenemos exactamente <span
+class="math inline">\(F_{\max}\)</span> caminos disjuntos.</p>
+<h1>d.</h1>
+<p>Sea <span class="math inline">\(N = (V,K)\)</span> nuestra red, como
+todas las aristas tienen capacidad 1, tenemos a lo sumo <span
+class="math inline">\(F_{\max}\)</span> caminos de aumento, y como BFS
+es <span class="math inline">\(O(m)\)</span> entonces tenemos que EK es
+<span class="math inline">\(O\left( mF_{\max} \right)\)</span>.</p>
+</body>
+</html>
