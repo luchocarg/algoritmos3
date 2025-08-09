@@ -1,5 +1,6 @@
 = Árboles
 
+
 == Definiciones generales
 
 Un árbol es un grafo $G$ conexo y acíclico.
