@@ -2,7 +2,7 @@
 import os
 import subprocess
 
-BASE_DIR = "docs/guias"
+BASE_DIR = "guias"
 
 '''
 #!/bin/bash
